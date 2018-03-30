@@ -1,9 +1,8 @@
 # Libft
 ___
-###Roadmap
-#### to add
----
-### Units test needed : 
+### Roadmap
+
+Units test needed : 
 (ID) : indirect test are made
 * ft\_memrcpy(ID)
 * ft\_strclen(ID)
@@ -18,16 +17,15 @@ ___
 * ft\_btw(ID)
 * ft\_split_tolst(need his proper c file)
 
----
-### functions to add :
+functions to add :
 * ft\_arraylen
 * ft\_lstaddmid
 * ft\_lstjoin
 * ft\_atoi_base
+#### to add
 * categorize (IO, String, memory, math, ctype, list, convert, test)
 * specific header & folder
 * Headers 42
-* License MIT
 * [to check](https://travis-ci.org/)
 
 #### to remove
@@ -37,6 +35,14 @@ ___
 ___
 ### Uncommit
 #### added
+#### fixed
+#### removed
+
+___
+### [V0.0.2] 2018-03-30
+#### added
+* License MIT
+* logo on the readme.md + pdf in docs folder
 * ft\_lstlen
 * ft\_min
 * ft\_max
@@ -46,8 +52,8 @@ ___
 * ft\_lstrev
 * security in memalloc
 #### fixed
+* now on github
 * change from define to function for math functions
-#### remove
 
 ___
 ### [V0.0.2] 2018-03-29
@@ -59,11 +65,11 @@ ___
 #### fixed
 * make ft_atoi.c work in negative because of INT MIN case. 
 * protect some fonctions
-#### remove
+#### removed
 * malloc call in ft_memmove.c (forward or bwd cpy)
 
 ---
-###[V0.0.2] 2018-03-27
+### [V0.0.2] 2018-03-27
 #### added
 * folder for objects on compilation
 * banner on compiling the lib
@@ -76,7 +82,7 @@ ___
 * roadmap.txt
 
 ___
-###[V0.0.1] 2018-03-26
+### [V0.0.1] 2018-03-26
 #### added
 * changelog.md
 * ft_strcasestr.c
@@ -92,7 +98,7 @@ ___
 * ft_strcasecmp now call ft_strncasecmp
 
 ___
-###[V0.0.1] 2018-03-24
+### [V0.0.1] 2018-03-24
 #### added
 * ft_strcasecmp.c
 * ft_strncasecmp.c
@@ -103,6 +109,6 @@ ___
 * libft.h prototypes
 
 ___
-###[V0.0.1] 2018-03-23
+### [V0.0.1] 2018-03-23
 #### added
 * Initial commit

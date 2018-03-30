@@ -1,14 +1,12 @@
 # Libft
 
 ---
+![Ascii art](https://github.com/nihuynh/Libft/blob/master/docs/logolib.png)
+
 _Summary: The goal of the project is to code the toolbox that i will use in all the future [42](http://42.fr) projects._
 
 ### Changelog:
-
-### Contact:
-
-### Licence:
-This library is under 
+[Here](https://github.com/nihuynh/Libft/blob/master/changelog.md)
 
 ### List of the functions: 
 
@@ -45,7 +43,11 @@ This library is under
 | ft\_strdup            | ft\_strequ            |                       |                       |
 | ft\_strndup           | ft\_strnequ           |                       |                       |
 
+---
+
 ### Credits for the awesome tests: 
-* [Credit to alelievr for libft-unit-test](https://github.com/alelievr/libft-unit-test)
-* [Credit to jtoty for Libftest](https://github.com/jtoty/Libftest)
-* [Credit to NegMozzie for those unit tests](https://github.com/NegMozzie/libft-test)
+* [Credit to alelievr](https://github.com/alelievr/libft-unit-test)
+* [Credit to jtoty](https://github.com/jtoty/Libftest)
+* [Credit to NegMozzie](https://github.com/NegMozzie/libft-test)
+### Licence:
+This repository is under MIT License.
