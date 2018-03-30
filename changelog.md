@@ -24,8 +24,8 @@ functions to add :
 * ft\_atoi_base
 #### to add
 * categorize (IO, String, memory, math, ctype, list, convert, test)
+mkdir includes && mkcd srcs && mkdir io string memory math ctype list convert
 * specific header & folder
-* Headers 42
 * [to check](https://travis-ci.org/)
 
 #### to remove
@@ -35,6 +35,7 @@ functions to add :
 ___
 ### Uncommit
 #### added
+* Headers 42
 #### fixed
 #### removed
 
