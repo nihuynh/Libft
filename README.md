@@ -1,8 +1,7 @@
-<center>
+<div style="text-align:center" markdown="1">
 # Libft
 
 ---
-
 ![Ascii art](https://github.com/nihuynh/Libft/blob/master/docs/logolib.png)
 
 ## Summary
@@ -14,8 +13,10 @@ _The goal of the project is to recode multiple standards functions and create yo
 
 ### Credits for the awesome tests: 
 * [Credit to alelievr](https://github.com/alelievr/libft-unit-test)
-* [Credit to jtoty](https://github.com/jtoty/Libftest)
 * [Credit to NegMozzie](https://github.com/NegMozzie/libft-test)
+* [Credit to jtoty](https://github.com/jtoty/Libftest)
 
 #### Licence:
 _This repository is under MIT License._
+
+</div>

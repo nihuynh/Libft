@@ -26,7 +26,6 @@ functions to add :
 * categorize (IO, String, memory, math, ctype, list, convert, test)
 mkdir includes && mkcd srcs && mkdir io string memory math ctype list convert
 * specific header & folder
-* [to check](https://travis-ci.org/)
 
 #### to remove
 #### to fix
@@ -35,6 +34,7 @@ mkdir includes && mkcd srcs && mkdir io string memory math ctype list convert
 ___
 ### Uncommit
 #### added
+* .travis.yml
 * Headers 42
 #### fixed
 #### removed
