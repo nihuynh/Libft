@@ -12,20 +12,20 @@
 
 # include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 {
 	size_t			len;
 	char 			*res;
 	unsigned int	index;
 
-	if (!f || !s)
+	if (!f || !str)
 		return (NULL);
-	len = ft_strlen(s);
+	len = ft_strlen(str);
 	if(!(res = ft_strnew(len)))
 		return (NULL);
 	index = 0;
-	while (*s)
-		*res++ = f(index++, *s++);
+	while (*str)
+		*res++ = f(index++, *str++);
 	res -= len;
 	return (res);
 }

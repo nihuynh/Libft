@@ -12,7 +12,7 @@
 
 # include "libft.h"
 
-char	*ft_strncat(char *restrict dst, const char *restrict src, size_t n)
+char	*ft_strncat(char *dst, const char *src, size_t n)
 {
 	char *pdst;
 

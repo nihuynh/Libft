@@ -26,18 +26,18 @@ static size_t	ft_strlentrim(const char *str)
 	return (len);
 }
 
-char	*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *str)
 {
 	size_t	len;
 	char	*res;
 	
-	if (s == NULL)
+	if (str == NULL)
 		return (NULL);
-	while (*s && (ft_isblank(*s) || *s == '\n'))
-		s++;
-	len = ft_strlentrim(s);
+	while (*str && (ft_isblank(*str) || *str == '\n'))
+		str++;
+	len = ft_strlentrim(str);
 	if (!(res = ft_strnew(len)))
 		return (NULL);
-	ft_strlcpy(res, s, len + 1);
+	ft_strlcpy(res, str, len + 1);
 	return (res);
 }

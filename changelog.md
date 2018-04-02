@@ -37,7 +37,10 @@ ___
 * .travis.yml
 * Headers 42
 #### fixed
+* categorie into the makefile
+* .travis.yml
 #### removed
+restrict keyword
 
 ___
 ### [V0.0.2] 2018-03-30

@@ -12,8 +12,8 @@
 
 # include "libft.h"
 
-void	ft_strclr(char *s)
+void	ft_strclr(char *str)
 {
-	if (s)
-		ft_bzero(s, ft_strlen(s));
+	if (str)
+		ft_bzero(str, ft_strlen(str));
 }

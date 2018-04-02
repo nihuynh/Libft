@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dst, char *src)
+char	*ft_strcat(char *dst,const char *src)
 {
 	char *pdst;
 

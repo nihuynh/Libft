@@ -12,7 +12,7 @@
 
 # include "libft.h"
 
-void	*ft_memrcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memrcpy(void *dst, const void *src, size_t n)
 {
 	t_byte	*pdst;
 	t_byte	*psrc;
