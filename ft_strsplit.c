@@ -13,20 +13,20 @@
 # include "libft.h"
 # include <stdlib.h>
 
-static size_t	ft_wordcount(const char *s, char c)
+static size_t	ft_wordcount(const char *str, char c)
 {
 	size_t count;
 
 	count = 1;
-	while (*s)
+	while (*str)
 	{
-		while (*s && *s == c)
-			s++;
-		if (*s)
+		while (*str && *str == c)
+			str++;
+		if (*str)
 		{
 			count++;
-			while (*s && *s != c)
-				s++;
+			while (*str && *str != c)
+				str++;
 		}
 	}
 	return (count);

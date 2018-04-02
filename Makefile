@@ -79,6 +79,7 @@ clean:
 fclean: clean
 	@$(RM) $(NAME)
 	@printf "\033[1;34mLibft\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
+
 git: clean
 	@$(RM) .DS_Store
 	@git add -A
