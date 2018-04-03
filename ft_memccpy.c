@@ -6,20 +6,20 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:16:02 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:16:02 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:13:50 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c,  size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	t_byte	*pdst;
 	t_byte	*psrc;
 
 	pdst = (t_byte*)dst;
 	psrc = (t_byte*)src;
-	while(n--)
+	while (n--)
 	{
 		*pdst++ = *psrc++;
 		if (*(pdst - 1) == (t_byte)c)

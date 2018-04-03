@@ -6,18 +6,18 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:19:57 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:19:57 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:18:12 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-static int ft_caprule(char c)
+static int	ft_caprule(char c)
 {
 	return (ft_btw(c, 31, 47) || ft_btw(c, 58, 64) || ft_isspace(c));
 }
 
-char	*ft_strcapitalize(char *str)
+char		*ft_strcapitalize(char *str)
 {
 	char *pstr;
 

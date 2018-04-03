@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:14:10 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:14:10 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:11:48 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-void ft_lstdelone(t_list **alst, void(*del)(void *, size_t))
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
 	if (alst)
 	{

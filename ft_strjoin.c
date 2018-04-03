@@ -6,16 +6,16 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:22:10 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:22:10 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:27:55 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-char* ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t len;
-	char *res;
+	size_t	len;
+	char	*res;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);

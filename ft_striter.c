@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:21:53 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:21:53 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:20:14 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-void	ft_striter(char *s, void(*f) (char *))
+void	ft_striter(char *s, void (*f) (char *))
 {
 	if (!f || !s)
 		return ;

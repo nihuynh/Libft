@@ -6,11 +6,11 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:32:18 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:32:18 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:26:20 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 static size_t	ft_strlentrim(const char *str)
 {
@@ -26,11 +26,11 @@ static size_t	ft_strlentrim(const char *str)
 	return (len);
 }
 
-char	*ft_strtrim(char const *str)
+char			*ft_strtrim(char const *str)
 {
 	size_t	len;
 	char	*res;
-	
+
 	if (str == NULL)
 		return (NULL);
 	while (*str && (ft_isblank(*str) || *str == '\n'))

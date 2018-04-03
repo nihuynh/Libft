@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:20:38 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:20:38 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:19:45 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-char *ft_strchr (const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	while (*str == (char)c || *str)
 	{

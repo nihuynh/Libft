@@ -6,18 +6,18 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:16:26 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:16:26 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:15:30 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	int		res;
 	t_byte	*ps1;
 	t_byte	*ps2;
-	
+
 	res = 0;
 	if (s1 == s2)
 		return (res);

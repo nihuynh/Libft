@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:32:47 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:32:47 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:25:00 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	return (ft_islower(c)) ? c - 32 : c;
 }

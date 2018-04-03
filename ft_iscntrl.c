@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 08:10:43 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 08:10:43 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:09:14 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-int 	ft_iscntrl(int c)
+int		ft_iscntrl(int c)
 {
 	return (ft_isascii(c) && !(ft_isprint(c)));
 }

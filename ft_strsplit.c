@@ -6,12 +6,12 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:31:46 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:31:46 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:27:03 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
-# include <stdlib.h>
+#include "libft.h"
+#include <stdlib.h>
 
 static size_t	ft_wordcount(const char *str, char c)
 {
@@ -32,11 +32,12 @@ static size_t	ft_wordcount(const char *str, char c)
 	return (count);
 }
 
-char	**ft_strsplit(const char *str, char c)
+char			**ft_strsplit(const char *str, char c)
 {
 	char	**res;
 	size_t	index;
 	size_t	wordlen;
+
 	if (str == NULL)
 		return (NULL);
 	index = 0;

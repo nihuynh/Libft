@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:31:32 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:31:32 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:24:22 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-char *ft_strrchr (const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
 	size_t len;
 

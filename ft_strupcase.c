@@ -6,11 +6,11 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:32:29 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:32:29 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:24:44 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 char	*ft_strupcase(char *str)
 {
@@ -22,6 +22,5 @@ char	*ft_strupcase(char *str)
 		*pstr = (char)ft_toupper(*pstr);
 		pstr++;
 	}
-
 	return (str);
 }

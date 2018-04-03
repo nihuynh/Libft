@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 08:14:46 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 08:14:46 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/03 16:11:11 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-void ft_lstaddbk(t_list **alst, t_list *new)
+void	ft_lstaddbk(t_list **alst, t_list *new)
 {
 	if (new)
 	{
