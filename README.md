@@ -1,14 +1,13 @@
-<div style="text-align:center" markdown="1">
-
 # Libft
 
 ---
+<div style="text-align:center" markdown="1">
 ![Ascii art](https://github.com/nihuynh/Libft/blob/master/docs/logolib.png)
 
 ## Summary
 _The goal of the project is to recode multiple standards functions and create your own library. A toolbox that will be used in many futures [42](http://42.fr) projects._
 
-[Changelog here](https://github.com/nihuynh/Libft/blob/master/changelog.md)
+[Changelog here](https://github.com/nihuynh/Libft/blob/master/docs/changelog.md)
 
 ---
 
