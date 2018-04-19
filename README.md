@@ -1,7 +1,7 @@
 # Libft
 
 ---
-<div style="text-align:center" markdown="1">
+
 ![Ascii art](https://github.com/nihuynh/Libft/blob/master/docs/logolib.png)
 
 ## Summary
@@ -17,6 +17,5 @@ _The goal of the project is to recode multiple standards functions and create yo
 * [Credit to jtoty](https://github.com/jtoty/Libftest)
 
 #### Licence:
-_This repository is under MIT License._
+_This repository is under no license._
 
-</div>

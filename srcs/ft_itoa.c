@@ -26,14 +26,11 @@ char	*ft_itoa(int value)
 	carry = ft_abs(value);
 	if (!(res = ft_strnew(index)))
 		return (NULL);
+	res[0] = (value < 0) ? '-' : '0';
 	while (carry)
 	{
 		res[--index] = carry % 10 + 48;
 		carry /= 10;
 	}
-	if (value < 0)
-		res[0] = '-';
-	else if (value == 0)
-		res[0] = '0';
 	return (res);
 }

@@ -6,16 +6,16 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:18:53 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:18:53 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/04/19 05:19:15 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr_fd(const char *str, int fd)
 {
 	if (str == NULL)
 		return ;
-	while (*str)
-		ft_putchar_fd(*str++, fd);
+	write(fd, str, ft_strlen(str));
 }

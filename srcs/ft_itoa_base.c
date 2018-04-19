@@ -30,14 +30,11 @@ char	*ft_itoa_base(int value, int base)
 	carry = (value > 0) ? value : -value;
 	if (!(res = ft_strnew(index)))
 		return (NULL);
+	res[0] = (value < 0 && base == 10) ? '-' : basestr[0];
 	while (carry)
 	{
 		res[--index] = basestr[carry % base];
 		carry /= base;
 	}
-	if (value < 0 && base == 10)
-		res[0] = '-';
-	else if (value == 0)
-		res[0] = basestr[0];
 	return (res);
 }
