@@ -12,7 +12,7 @@
 
 #include "ftstring.h"
 
-size_t	ft_strclen(const char *str, char c)
+size_t	ft_strclen(char const *str, char c)
 {
 	size_t len;
 

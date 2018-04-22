@@ -13,7 +13,7 @@
 #include "ftstring.h"
 #include <stdlib.h>
 
-static size_t	ft_wordcount(const char *str, char c)
+static size_t	ft_wordcount(char const *str, char c)
 {
 	size_t count;
 
@@ -32,7 +32,7 @@ static size_t	ft_wordcount(const char *str, char c)
 	return (count);
 }
 
-char			**ft_strsplit(const char *str, char c)
+char			**ft_strsplit(char const *str, char c)
 {
 	char	**res;
 	size_t	index;

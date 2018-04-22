@@ -12,7 +12,7 @@
 
 #include "ftmem.h"
 
-void	*ft_memchr(const void *str, int c, size_t n)
+void	*ft_memchr(void const *str, int c, size_t n)
 {
 	t_byte *pstr;
 

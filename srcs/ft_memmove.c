@@ -12,7 +12,7 @@
 
 #include "ftmem.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+void	*ft_memmove(void *dst, void const *src, size_t n)
 {
 	if (n == 0 || dst == src)
 		return (dst);

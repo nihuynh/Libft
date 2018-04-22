@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(char const *str, int c)
 {
 	while (*str == (char)c || *str)
 	{

@@ -12,7 +12,7 @@
 
 #include "ftstring.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(char const *src)
 {
 	char *res;
 

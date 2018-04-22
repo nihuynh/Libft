@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strcasestr(const char *s, const char *ne)
+char	*ft_strcasestr(char const *s, char const *ne)
 {
 	size_t len;
 

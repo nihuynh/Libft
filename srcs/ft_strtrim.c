@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	ft_strlentrim(const char *str)
+static size_t	ft_strlentrim(char const *str)
 {
 	size_t len;
 

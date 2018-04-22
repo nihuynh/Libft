@@ -12,7 +12,7 @@
 
 #include "ftmem.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(void const *s1, void const *s2, size_t n)
 {
 	int		res;
 	t_byte	*ps1;

@@ -21,5 +21,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *str, int fd);
 void	ft_putendl_fd(char const *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_puttab(char **tab);
+void	ft_print_value(char *name, int value);
 
 #endif

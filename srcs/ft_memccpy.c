@@ -12,7 +12,7 @@
 
 #include "ftmem.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, void const *src, int c, size_t n)
 {
 	t_byte	*pdst;
 	t_byte	*psrc;

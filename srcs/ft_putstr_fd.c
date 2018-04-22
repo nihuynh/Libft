@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putstr_fd(const char *str, int fd)
+void	ft_putstr_fd(char const *str, int fd)
 {
 	if (str == NULL)
 		return ;

@@ -4,23 +4,30 @@ ___
 
 #### to add
 _Units test_
-_Units test_
-_Units test_
-_Units test_
 for (ft\_lstat & ft\_strlstsplit) and many more
 *functions to add :*
-* ft\_arraylen
-* ft\_lstaddmid
-* ft\_lstjoin
-* ft\_atoi_base
-* specific folder for the sources files.
+* ft\_strjoinfree.c
+* ft\_strsubfree.c
+* ft\_putvalue.c
+* ft\_memjoin.c
+* ft\_memsub.c
+* ft\_memjoinfree.c
+* ft\_memsubfree.c
+* ft\_mempbrk.c
+
 
 #### to remove
 #### to fix
 ___
 ### Uncommit
 #### added
+.gitignore
+* specific folder for the sources files.
+* ft\_strpbrk.c
+* ft\_puttab.c
+* ft\_lstget.c
 #### fixed
+cont order in the functions (const char instead of char const )
 #### removed
 ___
 ### [V1.0.0] 2018-04-07

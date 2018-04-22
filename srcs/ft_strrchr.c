@@ -12,7 +12,7 @@
 
 #include "ftstring.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(char const *str, int c)
 {
 	size_t len;
 

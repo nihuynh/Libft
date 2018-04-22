@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_print_value.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:23:48 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:23:48 by nihuynh          ###   ########.fr       */
+/*   Created: 2018/04/22 03:21:19 by nihuynh           #+#    #+#             */
+/*   Updated: 2018/04/22 03:21:22 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftstring.h"
+#include "ftio.h"
 
-char	*ft_strncat(char *dst, char const *src, size_t n)
+void	ft_print_value(char *name, int value)
 {
-	char *pdst;
-
-	pdst = dst;
-	while (*pdst)
-		pdst++;
-	while (*src && n-- >= 1)
-		*pdst++ = *src++;
-	*pdst = '\0';
-	return (dst);
+	ft_putstr(name);
+	ft_putnbr(value);
 }
