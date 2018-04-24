@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/03/30 10:35:40 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/04/25 00:21:37 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	:=	libft.a
@@ -38,11 +38,12 @@ CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c \
 			ft_isdigit.c ft_isgraph.c ft_islower.c ft_isprint.c ft_isspace.c \
 			ft_isupper.c ft_isxdigit.c
 CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c
+OTHERS	:=	get_next_line.c
 # Headers files :
 HEADERS	:=	ftconvert.h ftctype.h ftio.h ftlist.h ftmath.h ftmem.h ftstring.h \
-			libft.h
+			libft.h get_next_line.h
 # **************************************************************************** #
-SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT)
+SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) $(OTHERS)
 OBJ		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 HEAD	:=	$(addprefix $(INCDIR)/, $(HEADERS))
 CC		:=	clang
@@ -61,12 +62,12 @@ OKLOGO	:=	\033[80G\033[32m[OK]\033[0m\n
 # **************************************************************************** #
 # Rules :
 all: $(NAME)
-	@printf $(ASCIIART)
 
 $(NAME): $(OBJ) $(HEAD)
 	@libtool -static -o $@ $(OBJ)
 	@ranlib $@
 	@printf "\n\033[1;34mLibft\033[25G\033[32mBuilt $@ $(OKLOGO)"
+	@printf $(ASCIIART)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir $(OBJDIR) 2> /dev/null || true

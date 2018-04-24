@@ -1,37 +1,35 @@
 # Libft
 ___
-### Roadmap
-
-#### to add
-_Units test_
-for (ft\_lstat & ft\_strlstsplit) and many more
-*functions to add :*
-* ft\_strjoinfree.c
-* ft\_strsubfree.c
-* ft\_putvalue.c
-* ft\_memjoin.c
-* ft\_memsub.c
-* ft\_memjoinfree.c
-* ft\_memsubfree.c
-* ft\_mempbrk.c
-
-
-#### to remove
-#### to fix
-___
 ### Uncommit
+#### added
+#### fixed
+#### removed
+___
+### [V1.0.2] 2018-04-25
+#### added
+* ft\_get_next_line.c
+* ft\_get_next_line.h
+
+#### fixed
+#### removed
+___
+### [V1.0.1] 2018-04-22
 #### added
 .gitignore
 * specific folder for the sources files.
+* ft\_strjoinfree.c
+* ft\_strsubfree.c
 * ft\_strpbrk.c
 * ft\_puttab.c
-* ft\_lstget.c
+* ft\_print_value.c
+* ft\_lstget.
+
 #### fixed
 cont order in the functions (const char instead of char const )
 #### removed
+
 ___
 ### [V1.0.0] 2018-04-07
-## V1 hurray
 #### added
 * .travis.yml
 * Headers 42
@@ -42,8 +40,8 @@ ___
 * .travis.yml
 * Norme
 #### removed
+* License MIT
 restrict keyword
-
 ___
 ### [V0.0.2] 2018-03-30
 #### added
@@ -60,8 +58,7 @@ ___
 #### fixed
 * now on github
 * change from define to function for math functions
-
-___
+__
 ### [V0.0.2] 2018-03-29
 #### added
 * readme.md
@@ -73,7 +70,6 @@ ___
 * protect some fonctions
 #### removed
 * malloc call in ft_memmove.c (forward or bwd cpy)
-
 ---
 ### [V0.0.2] 2018-03-27
 #### added
@@ -86,7 +82,6 @@ ___
 #### removed
 * std lib include in the header
 * roadmap.txt
-
 ___
 ### [V0.0.1] 2018-03-26
 #### added
@@ -102,7 +97,6 @@ ___
 * Makefile change (upgrade linker, add status when building the lib)
 * ft_putnbr now call ft_putnbr\_fd
 * ft_strcasecmp now call ft_strncasecmp
-
 ___
 ### [V0.0.1] 2018-03-24
 #### added
@@ -113,7 +107,6 @@ ___
 * roadmap.txt
 #### fixed
 * libft.h prototypes
-
 ___
 ### [V0.0.1] 2018-03-23
 #### added
