@@ -20,5 +20,6 @@
 # include "ftmath.h"
 # include "ftmem.h"
 # include "ftstring.h"
+# include "get_next_line.h"
 
 #endif
