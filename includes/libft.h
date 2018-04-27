@@ -22,4 +22,7 @@
 # include "ftstring.h"
 # include "get_next_line.h"
 
+int     ft_tablen(char **tab);
+void    ft_tabdel(char ***tab);
+
 #endif
