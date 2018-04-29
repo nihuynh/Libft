@@ -58,5 +58,6 @@ char	*ft_strupcase(char *str);
 char	*ft_strcapitalize(char *str);
 char	*ft_strcasestr(char const *str, char const *needle);
 char	*ft_strpbrk(char const *s1, char const *s2);
+char	*ft_strnchr(char const *str, int c, int size);
 
 #endif

@@ -27,7 +27,8 @@ STRING	:=	ft_str_is_alpha.c ft_str_is_lowercase.c ft_str_is_numeric.c \
 			ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strndup.c ft_strnequ.c \
 			ft_strnew.c ft_strnstr.c ft_strcasestr.c ft_strrchr.c \
 			ft_strsplit.c ft_strstr.c ft_strclen.c ft_strsub.c ft_strtrim.c \
-			ft_strupcase.c ft_strpbrk.c ft_strsubfree.c ft_strjoinfree.c
+			ft_strupcase.c ft_strpbrk.c ft_strsubfree.c ft_strjoinfree.c \
+			ft_strnchr.c
 MEM		:=	ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
 			ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_memrcpy.c
 MATH	:=	ft_abs.c ft_min.c ft_max.c ft_btw.c
@@ -37,11 +38,12 @@ LIST	:=	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c \
 CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c \
 			ft_isdigit.c ft_isgraph.c ft_islower.c ft_isprint.c ft_isspace.c \
 			ft_isupper.c ft_isxdigit.c
-CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c
-OTHERS	:=	get_next_line.c ft_tablen.c ft_putctab.c ft_tabdel.c
+CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c \
+			ft_atoi_base.c
+OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_tabdel.c
 # Headers files :
 HEADERS	:=	ftconvert.h ftctype.h ftio.h ftlist.h ftmath.h ftmem.h ftstring.h \
-			libft.h get_next_line.h
+			libft.h ftgnl.h
 # **************************************************************************** #
 SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) $(OTHERS)
 OBJ		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))

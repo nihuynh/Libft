@@ -7,9 +7,12 @@ ___
 ___
 ### [V1.0.2] 2018-04-25
 #### added
-* ft\_get_next_line.c
-* ft\_get_next_line.h
-
+* ft\_get_next_line.c >> ft_gnl.c
+* ft\_get_next_line.h >> ftgnl.h
+* ft\_ft_atoi_base.c
+* ft\_ft_strnchr.c
+* ft\_ft_tabdel.c
+* ft\_ft_tablen.c
 #### fixed
 #### removed
 ___

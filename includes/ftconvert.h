@@ -13,7 +13,8 @@
 #ifndef FTCONVERT_H
 # define FTCONVERT_H
 
-int		ft_atoi(const char *str);
+int		ft_atoi(char const *str);
+int		ft_atoi_base(char const *str, int base);
 char	*ft_itoa(int n);
 char	*ft_itoa_base(int value, int base);
 int		ft_tolower(int c);

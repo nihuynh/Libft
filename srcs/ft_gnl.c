@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_gnl.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:40:55 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/04/23 03:29:54 by nihuynh          ###   ########.fr       */
+/*   Created: 2018/04/29 16:10:22 by nihuynh           #+#    #+#             */
+/*   Updated: 2018/04/29 16:10:38 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "ftgnl.h"
 
 /*
 ** This functions fetch a packet and return how many byte has been read.
@@ -37,7 +37,7 @@ static ssize_t	ft_fetchpacket(int const fd, char **flux)
 ** 11:	Handle the return value.
 */
 
-static int		get_next_line_from_node(t_gnl *node, char **line)
+static int		get_next_line_from_node(t_gnl *node, char **line, char *endlsep)
 {
 	ssize_t	read_byte;
 	size_t	lenendl;
@@ -45,7 +45,7 @@ static int		get_next_line_from_node(t_gnl *node, char **line)
 	char	*endl;
 
 	read_byte = 1;
-	while (!(endl = ft_strpbrk(SAVE, ENDL)) && read_byte > 0)
+	while (!(endl = ft_strpbrk(SAVE, endlsep)) && read_byte > 0)
 		read_byte = ft_fetchpacket(node->fd, &SAVE);
 	len_save = ft_strlen(SAVE);
 	lenendl = (endl == NULL) ? len_save : endl - SAVE;
@@ -60,7 +60,7 @@ static int		get_next_line_from_node(t_gnl *node, char **line)
 ** Hold the data list, handle errors.
 */
 
-int				get_next_line(int const fd, char **line)
+int				ft_gnl(int const fd, char **line, char *endl)
 {
 	static t_gnl	memory[MAX_FD + 1];
 	char			errfd[1];
@@ -76,7 +76,7 @@ int				get_next_line(int const fd, char **line)
 		if (!(memory[fd].save = ft_strnew(0)))
 			return (-1);
 	}
-	ret = get_next_line_from_node(&memory[fd], line);
+	ret = get_next_line_from_node(&memory[fd], line, endl);
 	if (ret == 0)
 		ft_strdel(&memory[fd].save);
 	return (ret);
