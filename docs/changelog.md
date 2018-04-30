@@ -10,6 +10,7 @@ ___
 * ft\_get_next_line.c >> ft_gnl.c
 * ft\_get_next_line.h >> ftgnl.h
 * ft\_ft_atoi_base.c
+* ft\_wordcount.c
 * ft\_ft_strnchr.c
 * ft\_ft_tabdel.c
 * ft\_ft_tablen.c
