@@ -13,6 +13,8 @@ ___
 * ft\_ft_strnchr.c
 * ft\_ft_tabdel.c
 * ft\_ft_tablen.c
+* ft\_ft_error.c
+* ft\_ft_fopen_read.c
 #### fixed
 #### removed
 ___

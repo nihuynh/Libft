@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/04/25 00:21:37 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/04/30 14:42:30 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	:=	libft.a
@@ -17,7 +17,7 @@ INCDIR	:=	includes
 # Sources files :
 IO		:=	ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c \
 			ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c \
-			ft_puttab.c ft_print_value.c
+			ft_puttab.c ft_print_value.c ft_fopen_read.c
 STRING	:=	ft_str_is_alpha.c ft_str_is_lowercase.c ft_str_is_numeric.c \
 			ft_str_is_printable.c ft_str_is_uppercase.c ft_strcapitalize.c \
 			ft_strcasecmp.c ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c \
@@ -40,7 +40,7 @@ CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c \
 			ft_isupper.c ft_isxdigit.c
 CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c \
 			ft_atoi_base.c
-OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_tabdel.c
+OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_tabdel.c ft_error.c
 # Headers files :
 HEADERS	:=	ftconvert.h ftctype.h ftio.h ftlist.h ftmath.h ftmem.h ftstring.h \
 			libft.h ftgnl.h
