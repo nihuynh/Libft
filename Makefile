@@ -40,7 +40,7 @@ CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c \
 			ft_isupper.c ft_isxdigit.c
 CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c \
 			ft_atoi_base.c
-OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_tabdel.c ft_error.c
+OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_tabdel.c ft_error.c ft_swap.c
 # Headers files :
 HEADERS	:=	ftconvert.h ftctype.h ftio.h ftlist.h ftmath.h ftmem.h ftstring.h \
 			libft.h ftgnl.h

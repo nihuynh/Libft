@@ -15,10 +15,10 @@
 # include "libft.h"
 # include <unistd.h>
 
-# define BUFF_SIZE 1024
+# define BUFF_SIZE 512
 # define SAVE node->save
 # define MAX_BS 10000000
-# define MAX_FD 255
+# define MAX_FD 64
 
 typedef struct	s_gnl
 {
