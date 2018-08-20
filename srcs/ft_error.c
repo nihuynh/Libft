@@ -19,7 +19,7 @@ void	ft_error(const char function[], int line)
 {
 	ft_putstr("Error during ");
 	ft_putstr(function);
-	ft_print_value("(at line : ", line);
+	ft_print_value(" (at line : ", line);
 	ft_putstr(") => ");
 	ft_putendl_fd(strerror(errno), 2);
 	exit(errno);
