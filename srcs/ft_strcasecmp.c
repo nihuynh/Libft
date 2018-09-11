@@ -21,7 +21,7 @@ int	ft_strcasecmp(char const *s1, char const *s2)
 	ps1 = (t_byte*)s1;
 	ps2 = (t_byte*)s2;
 	res = 0;
-	while (!res)
+	while (!res && (*ps1 || *ps2))
 		res = ft_tolower(*ps1++) - ft_tolower(*ps2++);
 	return (res);
 }
