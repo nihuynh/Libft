@@ -1,9 +1,16 @@
 # Libft
+TODO : 
+printf & printf_toa
+fix * ft\_ft_tabdel.c
 ___
 ### Uncommit
 #### added
+ft\_swap
+ft_dtoa.c
 #### fixed
+Optimise strcmp
 #### removed
+ft\_strnchr.c (duplicat with ft_memchr.c)
 ___
 ### [V1.0.2] 2018-04-25
 #### added

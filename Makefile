@@ -6,9 +6,10 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/04/30 14:42:30 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/09/11 03:28:19 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 NAME	:=	libft.a
 # directories :
 SRCDIR	:=	srcs
@@ -28,7 +29,7 @@ STRING	:=	ft_str_is_alpha.c ft_str_is_lowercase.c ft_str_is_numeric.c \
 			ft_strnew.c ft_strnstr.c ft_strcasestr.c ft_strrchr.c \
 			ft_strsplit.c ft_strstr.c ft_strclen.c ft_strsub.c ft_strtrim.c \
 			ft_strupcase.c ft_strpbrk.c ft_strsubfree.c ft_strjoinfree.c \
-			ft_strnchr.c ft_wordcount.c
+			ft_wordcount.c
 MEM		:=	ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
 			ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_memrcpy.c
 MATH	:=	ft_abs.c ft_min.c ft_max.c ft_btw.c
@@ -39,7 +40,7 @@ CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c \
 			ft_isdigit.c ft_isgraph.c ft_islower.c ft_isprint.c ft_isspace.c \
 			ft_isupper.c ft_isxdigit.c
 CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c \
-			ft_atoi_base.c
+			ft_atoi_base.c ft_dtoa.c
 OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_tabdel.c ft_error.c ft_swap.c
 # Headers files :
 HEADERS	:=	ftconvert.h ftctype.h ftio.h ftlist.h ftmath.h ftmem.h ftstring.h \

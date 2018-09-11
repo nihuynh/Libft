@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:08:44 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/04/07 01:08:44 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/09/11 03:22:27 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ char	*ft_itoa(int n);
 char	*ft_itoa_base(int value, int base);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char    *dtoa(double value, int precision);
 
 #endif
