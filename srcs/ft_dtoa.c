@@ -6,37 +6,64 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 04:46:44 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/09/11 04:46:44 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/09/11 19:51:37 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftconvert.h"
 #include "ftstring.h"
+#include "ftmath.h"
 #include <stdlib.h>
 
-char *ft_dtoa(double value, int precision)
+static inline char	*ft_itoa_signed(int value, int signe, int dot)
 {
-    char            *unitstr;
-    char            *decistr;
-    char            *dest;
-    unsigned int    carry;
+	char			*res;
+	int				ndx;
+	unsigned int	carry;
 
-    if (!(unitstr = ft_itoa((int)value)))
-        return (NULL);
-    value -= (int)value;
-    carry = 1;
-    if (precision <= 0)
-        return(unitstr);
-    if (!(unitstr = ft_strjoinfree(unitstr, ".")))
-        return (NULL);
-    while (precision--)
-        carry *= 10;
-    carry *= value;
-    if (!(decistr = ft_itoa(carry)))
-        return (NULL);
-    if (!(dest = ft_strjoin(unitstr, decistr)))
-        return (NULL);
-    free(unitstr);
-    free(decistr);
-    return (dest);
+	carry = ft_abs(value);
+	ndx = 1 + dot + signe;
+	while (carry /= 10)
+		ndx++;
+	carry = ft_abs(value);
+	if (!(res = ft_strnew(ndx)))
+		return (NULL);
+	if (signe)
+		res[0] = '-';
+	if (dot)
+		res[--ndx] = '.';
+	if (!carry)
+		res[--ndx] = '0';
+	while (carry)
+	{
+		res[--ndx] = carry % 10 + 48;
+		carry /= 10;
+	}
+	return (res);
+}
+
+char				*ft_dtoa(double value, int precision)
+{
+	char			*unitstr;
+	char			*decistr;
+	char			*dest;
+	unsigned int	carry;
+
+	if (!(unitstr = ft_itoa_signed((int)value, value < 0, precision > 0)))
+		return (NULL);
+	value = (value > 0) ? value : -value;
+	value -= ft_abs((int)value);
+	carry = 1;
+	if (precision <= 0)
+		return (unitstr);
+	while (precision--)
+		carry *= 10;
+	carry *= value;
+	if (!(decistr = ft_itoa(carry)))
+		return (NULL);
+	if (!(dest = ft_strjoin(unitstr, decistr)))
+		return (NULL);
+	free(unitstr);
+	free(decistr);
+	return (dest);
 }

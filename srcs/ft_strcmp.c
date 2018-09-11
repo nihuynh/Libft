@@ -19,9 +19,10 @@ int		ft_strcmp(char const *s1, char const *s2)
 
 	ps1 = (t_byte*)s1;
 	ps2 = (t_byte*)s2;
-    while (*ps1 && *ps2 && *ps1 == *ps2) {
-      ++ps1;
-      ++ps2;
-    }
-    return (*ps1 - *ps2);
+	while (*ps1 && *ps2 && *ps1 == *ps2)
+	{
+		++ps1;
+		++ps2;
+	}
+	return (*ps1 - *ps2);
 }

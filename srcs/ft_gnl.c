@@ -60,7 +60,7 @@ inline static int		process_line(t_gnl *node, char **line, char *endlsep)
 ** Hold the data list, handle errors.
 */
 
-int				ft_gnl(int const fd, char **line, char *endl)
+int						ft_gnl(int const fd, char **line, char *endl)
 {
 	static t_gnl	memory[MAX_FD + 1];
 	char			errfd[1];
