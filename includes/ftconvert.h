@@ -19,6 +19,6 @@ char	*ft_itoa(int n);
 char	*ft_itoa_base(int value, int base);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-char    *dtoa(double value, int precision);
+char	*ft_dtoa(double value, int precision);
 
 #endif

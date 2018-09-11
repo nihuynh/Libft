@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_dtoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/09/11 04:46:44 by nihuynh           #+#    #+#             */
+/*   Updated: 2018/09/11 04:46:44 by nihuynh          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ftconvert.h"
 #include "ftstring.h"
 #include <stdlib.h>
 
-char *dtoa(double value, int precision)
+char *ft_dtoa(double value, int precision)
 {
     char            *unitstr;
     char            *decistr;
