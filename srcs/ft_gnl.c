@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/29 16:10:22 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/04/29 16:10:38 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/09/11 01:51:27 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** This functions fetch a packet and return how many byte has been read.
 */
 
-static ssize_t	ft_fetchpacket(int const fd, char **flux)
+inline static ssize_t	ft_fetchpacket(int const fd, char **flux)
 {
 	ssize_t	byte_read;
 	char	*packet;
@@ -37,7 +37,7 @@ static ssize_t	ft_fetchpacket(int const fd, char **flux)
 ** 11:	Handle the return value.
 */
 
-static int		get_next_line_from_node(t_gnl *node, char **line, char *endlsep)
+inline static int		process_line(t_gnl *node, char **line, char *endlsep)
 {
 	ssize_t	read_byte;
 	size_t	lenendl;
@@ -76,7 +76,7 @@ int				ft_gnl(int const fd, char **line, char *endl)
 		if (!(memory[fd].save = ft_strnew(0)))
 			return (-1);
 	}
-	ret = get_next_line_from_node(&memory[fd], line, endl);
+	ret = process_line(&memory[fd], line, endl);
 	if (ret == 0)
 		ft_strdel(&memory[fd].save);
 	return (ret);
