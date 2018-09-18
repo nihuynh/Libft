@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/09/11 03:28:19 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/09/18 17:33:00 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,4 +93,8 @@ git: clean
 
 re: fclean all
 
-.PHONY:all, $(NAME), clean fclean, git, re
+norme:
+	@norminette -R CheckForbiddenSourceHeader srcs includes
+	@printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
+
+.PHONY:all, $(NAME), clean fclean, git, re, norme
