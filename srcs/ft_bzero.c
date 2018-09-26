@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 08:09:40 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 08:09:40 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/09/26 15:30:57 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 void	ft_bzero(void *str, size_t n)
 {
-	ft_memset(str, 0, n);
+	t_byte	*pstr;
+	t_byte	val;
+
+	pstr = (t_byte*)str;
+	val = 0;
+	while (n--)
+		*pstr++ = val;
 }
