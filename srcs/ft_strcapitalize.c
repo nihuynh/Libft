@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-static int	ft_caprule(char c)
+inline static int	ft_caprule(char c)
 {
 	return (ft_btw(c, 31, 47) || ft_btw(c, 58, 64) || ft_isspace(c));
 }
 
-char		*ft_strcapitalize(char *str)
+char				*ft_strcapitalize(char *str)
 {
 	char *pstr;
 

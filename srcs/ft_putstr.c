@@ -10,9 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftio.h"
+#include "ftstring.h"
+#include <unistd.h>
 
 void	ft_putstr(char const *str)
 {
-	ft_putstr_fd(str, 1);
+	if (str == NULL)
+		return ;
+	write(1, str, ft_strlen(str));
 }

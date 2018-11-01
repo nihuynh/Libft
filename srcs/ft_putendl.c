@@ -11,8 +11,13 @@
 /* ************************************************************************** */
 
 #include "ftio.h"
+#include "ftstring.h"
+#include <unistd.h>
 
 void	ft_putendl(char const *s)
 {
-	ft_putendl_fd(s, 1);
+	if (s == NULL)
+		return ;
+	write(1, s, ft_strlen(s));
+	ft_putchar('\n');
 }

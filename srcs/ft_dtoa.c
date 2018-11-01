@@ -12,7 +12,6 @@
 
 #include "ftconvert.h"
 #include "ftstring.h"
-#include "ftmath.h"
 #include <stdlib.h>
 
 static inline char	*ft_itoa_signed(int value, int signe, int dot)
@@ -21,11 +20,11 @@ static inline char	*ft_itoa_signed(int value, int signe, int dot)
 	int				ndx;
 	unsigned int	carry;
 
-	carry = ft_abs(value);
+	carry = (value > 0) ? value : -value;
 	ndx = 1 + dot + signe;
 	while (carry /= 10)
 		ndx++;
-	carry = ft_abs(value);
+	carry = (value > 0) ? value : -value;
 	if (!(res = ft_strnew(ndx)))
 		return (NULL);
 	if (signe)
@@ -52,7 +51,7 @@ char				*ft_dtoa(double value, int precision)
 	if (!(unitstr = ft_itoa_signed((int)value, value < 0, precision > 0)))
 		return (NULL);
 	value = (value > 0) ? value : -value;
-	value -= ft_abs((int)value);
+	value -= (value > 0) ? (int)value : (int)-value;
 	carry = 1;
 	if (precision <= 0)
 		return (unitstr);

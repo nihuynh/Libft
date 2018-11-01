@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ftstring.h"
 #include "ftio.h"
+#include <unistd.h>
 
 void	ft_print_value(char *name, int value)
 {
-	ft_putstr(name);
+	write(1, name, ft_strlen(name));
 	ft_putnbr(value);
 }

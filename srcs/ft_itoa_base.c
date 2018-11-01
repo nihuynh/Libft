@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftmath.h"
 #include "ftstring.h"
 
 char	*ft_itoa_base(int value, int base)

@@ -41,7 +41,7 @@ CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c \
 			ft_isupper.c ft_isxdigit.c
 CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c \
 			ft_atoi_base.c ft_dtoa.c
-OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_tabdel.c ft_error.c ft_swap.c
+OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c
 # Headers files :
 HEADERS	:=	ftconvert.h ftctype.h ftio.h ftlist.h ftmath.h ftmem.h ftstring.h \
 			libft.h ftgnl.h
@@ -50,7 +50,7 @@ SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) $(OTHERS)
 OBJ		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 HEAD	:=	$(addprefix $(INCDIR)/, $(HEADERS))
 CC		:=	clang
-CFLAGS	:= 	-Werror -Wall -Wextra -I$(INCDIR)
+CFLAGS	:= 	-Werror -Wall -Wextra -O2 -I$(INCDIR)
 RM		:=	/bin/rm -f
 # **************************************************************************** #
 ASCIIART:=	"\033[1;36m\033[19G_ _                       _       _ _ _      __ \

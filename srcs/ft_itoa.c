@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftmath.h"
 #include "ftstring.h"
 
 char	*ft_itoa(int value)
@@ -19,11 +18,11 @@ char	*ft_itoa(int value)
 	int				index;
 	unsigned int	carry;
 
-	carry = ft_abs(value);
+	carry = (value > 0) ? value : -value;
 	index = (value < 0) ? 2 : 1;
 	while (carry /= 10)
 		index++;
-	carry = ft_abs(value);
+	carry = (value > 0) ? value : -value;
 	if (!(res = ft_strnew(index)))
 		return (NULL);
 	res[0] = (value < 0) ? '-' : '0';

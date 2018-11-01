@@ -10,17 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftmath.h"
 #include "ftio.h"
 
 void	ft_putnbr_fd(int nb, int fd)
 {
-	unsigned int carrier;
+	unsigned int carry;
 
-	carrier = ft_abs(nb);
+	carry = (nb > 0) ? nb : -nb;
 	if (nb < 0)
 		ft_putchar_fd('-', fd);
-	if (carrier >= 10)
-		ft_putnbr_fd(carrier / 10, fd);
-	ft_putchar_fd(48 + carrier % 10, fd);
+	if (carry >= 10)
+		ft_putnbr_fd(carry / 10, fd);
+	ft_putchar_fd(48 + carry % 10, fd);
 }

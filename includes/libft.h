@@ -23,7 +23,6 @@
 # include "ftgnl.h"
 
 int		ft_tablen(char **tab);
-void	ft_tabdel(char ***tab);
 void	ft_swap(int *a, int *b);
 
 #endif
