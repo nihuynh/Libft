@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/09/18 17:33:00 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/11/13 16:34:13 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ MEM		:=	ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
 MATH	:=	ft_abs.c ft_min.c ft_max.c ft_btw.c
 LIST	:=	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c \
 			ft_lstnew.c ft_lstrev.c ft_lstlen.c  ft_lstaddbk.c ft_lstlast.c \
-			ft_lstat.c ft_strlstsplit.c ft_lstget.c
+			ft_lstat.c ft_lstget.c
 CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c \
 			ft_isdigit.c ft_isgraph.c ft_islower.c ft_isprint.c ft_isspace.c \
 			ft_isupper.c ft_isxdigit.c
