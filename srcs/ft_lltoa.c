@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lltoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,11 @@
 
 #include "ftstring.h"
 
-char	*ft_itoa(int value)
+char	*ft_lltoa(long long value)
 {
-	char			*res;
-	int				idx;
-	unsigned int	carry;
+	char				*res;
+	size_t				idx;
+	unsigned long long	carry;
 
 	carry = (value > 0) ? value : -value;
 	idx = (value < 0) ? 2 : 1;

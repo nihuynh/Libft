@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+         #
+#    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/18 10:23:16 by sklepper          #+#    #+#              #
-#    Updated: 2018/09/27 15:14:52 by sklepper         ###   ########.fr        #
+#    Updated: 2018/11/13 17:40:14 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,43 +15,15 @@ NAME = libftprintf.a
 
 NAMEN = ft_printf
 
-SRC = main.c \
-      to_base.c \
-      string.c \
-      length.c \
-      flags.c \
-      path.c \
-      precision.c \
-      pick_f_u_int.c \
-      pick_f_base.c \
-      digits_precision.c \
-      digits_precision_spec.c \
-      pick_f_c.c \
-      ft_itoa.c \
-      ft_memset.c \
-      ft_strchr.c \
-	  write_str.c \
-      ft_strcmp.c \
-      ft_strlen.c \
-      ft_strnew.c \
-      ft_strdel.c \
-      ft_atoi.c \
-      ft_strdup.c \
-      pick_f_w.c \
-      pick_f_s.c \
-      pick_f_bigs.c \
-	  toolbox.c \
-      pick_f_percent.c \
-      pick_f_p.c \
-      pick_f_d.c \
-      exceptions_func.c \
-      ft_bzero.c
+SRC = printf.c to_base.c string.c length.c flags.c exceptions_func.c \
+      path.c precision.c pick_f_u_int.c pick_f_base.c write_str.c \
+      digits_precision.c digits_precision_spec.c pick_f_c.c ft_atoi.c \
+      pick_f_w.c pick_f_s.c pick_f_bigs.c pick_f_percent.c pick_f_p.c pick_f_d.c
+      
 
 OBJ = $(SRC:.c=.o) 
 
-HEADER = libft.h
-
-LFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
@@ -63,7 +35,7 @@ yo:		$(OBJ)
 	rm -f $(OBJ)
 
 %.o: %.c
-	@gcc -c $(FLAGS) $<
+	@gcc -c $(CFLAGS) $< -o $@
 
 clean:
 	rm -f $(OBJ)

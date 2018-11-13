@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 08:13:58 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 08:13:58 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/13 16:37:48 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@ char	*ft_itoa_base(int value, int base)
 {
 	char			*res;
 	char			*basestr;
-	int				index;
+	int				idx;
 	unsigned int	carry;
 
 	basestr = "0123456789ABCDEF";
-	index = (value < 0 && base == 10) ? 2 : 1;
+	idx = (value < 0 && base == 10) ? 2 : 1;
 	carry = (value > 0) ? value : -value;
 	if (base < 2 || base > 16)
 		return (NULL);
 	while (carry /= base)
-		index++;
+		idx++;
 	carry = (value > 0) ? value : -value;
-	if (!(res = ft_strnew(index)))
+	if (!(res = ft_strnew(idx)))
 		return (NULL);
 	res[0] = (value < 0 && base == 10) ? '-' : basestr[0];
 	while (carry)
 	{
-		res[--index] = basestr[carry % base];
+		res[--idx] = basestr[carry % base];
 		carry /= base;
 	}
 	return (res);

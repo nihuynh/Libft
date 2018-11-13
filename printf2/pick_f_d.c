@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pick_f_d.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:54:03 by sklepper          #+#    #+#             */
-/*   Updated: 2018/09/27 13:46:58 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/13 17:35:31 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ static int		ft_int(t_data *data, long long n)
 	int		neg;
 
 	if (n < 0)
-		str = ft_itoa_long(-n);
+		str = ft_lltoa(-n);
 	else
-		str = ft_itoa_long(n);
-	neg = ft_isneg(n);
+		str = ft_lltoa(n);
+	neg = (n < 0) ? 1 : 0;
 	if (n != 0 || data->precision != -1)
 		data->len = ft_strlen(str);
 	flags_d(data, neg, str, n);

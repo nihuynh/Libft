@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:57:24 by sklepper          #+#    #+#             */
-/*   Updated: 2018/09/27 10:33:22 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/13 17:35:25 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <inttypes.h>
 # include <wchar.h>
 # include <stdlib.h>
+# include "../includes/libft.h"
 
 # define SHARP 0
 # define ZERO 1
@@ -49,14 +50,7 @@ typedef struct	s_data
 }				t_data;
 
 int				path(char *ptr, va_list param, t_data *data);
-int				ft_strlen(const char *str);
-char			*ft_strchr(const char *str1, int c);
 int				ft_atoi(const char *str);
-char			*ft_strdup(char *src);
-int				ft_strdel(char **str);
-void			*ft_memset(void *s, int c, size_t n);
-int				ft_putnbr(int nb);
-int				ft_strcmp(const char *str1, char *str2);
 int				conversion(const char *ptr, va_list param, t_data *data);
 int				int_param(va_list param);
 int				string_param(t_data *data, va_list param);
@@ -105,7 +99,6 @@ int				check_ox(t_data *data);
 int				check_u(t_data *data);
 int				fill_buff_c(t_data *data, char c);
 int				ft_printf(const char *str, ...);
-char			*ft_strnew(size_t size);
 int				write_str(t_data *data, char *str);
 int				write_w(t_data *data, wchar_t unicode);
 void			determine_w_len(t_data *data, wchar_t unicode);
@@ -113,7 +106,6 @@ int				f_width_p(t_data *data, uintptr_t nb);
 int				exception_zero_x(t_data *data, const char *ptr);
 int				exception_bigs(t_data *data, char *ptr);
 int				exception_zero_u(t_data *data);
-char			*ft_itoa_long(long long n);
-int				ft_isneg(long long n);
+
 
 #endif

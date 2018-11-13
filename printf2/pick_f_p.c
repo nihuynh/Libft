@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pick_f_p.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:54:31 by sklepper          #+#    #+#             */
-/*   Updated: 2018/07/23 15:32:35 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/13 17:37:05 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,6 @@ int				pick_f_p(va_list param, t_data *data, const char *ptr)
 	if (data->flags[MINUS] == 1)
 		f_width_p(data, nb);
 	ft_strdel(&result);
-	return (ft_strdel(&str));
+	ft_strdel(&str);
+	return (0); 
 }

@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:34:50 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/04/03 16:33:50 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/13 17:22:05 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # include "ftmath.h"
 # include "ftmem.h"
 # include "ftstring.h"
-# include "ftgnl.h"
 
 int		ft_tablen(char **tab);
 void	ft_swap(int *a, int *b);
+int		ft_gnl(int const fd, char **line, char *endlsep);
 
 #endif
