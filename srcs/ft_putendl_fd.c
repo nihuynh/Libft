@@ -6,11 +6,11 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:18:06 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/04/03 16:17:33 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/11 04:50:39 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ftstring.h"
+#include "ftstring.h"
 #include "ftio.h"
 #include <unistd.h>
 
