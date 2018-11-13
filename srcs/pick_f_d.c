@@ -6,11 +6,33 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:54:03 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/13 17:35:31 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/13 18:37:39 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+char	*ft_lltoa_pf(long long value)
+{
+	char				*res;
+	size_t				idx;
+	unsigned long long	carry;
+
+	carry = (value > 0) ? value : -value;
+	idx = 1;
+	while (carry /= 10)
+		idx++;
+	carry = (value > 0) ? value : -value;
+	if (!(res = ft_strnew(idx)))
+		return (NULL);
+	res[0] = '0';
+	while (carry)
+	{
+		res[--idx] = carry % 10 + 48;
+		carry /= 10;
+	}
+	return (res);
+}
 
 static void		sign_d(t_data *data, int sign)
 {
@@ -68,9 +90,9 @@ static int		ft_int(t_data *data, long long n)
 	int		neg;
 
 	if (n < 0)
-		str = ft_lltoa(-n);
+		str = ft_lltoa_pf(-n);
 	else
-		str = ft_lltoa(n);
+		str = ft_lltoa_pf(n);
 	neg = (n < 0) ? 1 : 0;
 	if (n != 0 || data->precision != -1)
 		data->len = ft_strlen(str);

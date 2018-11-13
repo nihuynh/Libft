@@ -6,11 +6,12 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/11/13 17:58:00 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/11/13 18:41:32 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	libft.a
+#NAME	:=	libft.a
+NAME 	:=	libftprintf.a
 # directories :
 SRCDIR	:=	srcs
 OBJDIR	:=	objs
@@ -55,7 +56,7 @@ SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) \
 OBJ		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 HEAD	:=	$(addprefix $(INCDIR)/, $(HEADERS))
 CC		:=	clang
-CFLAGS	:= 	-Werror -Wall -Wextra -I$(INCDIR)
+CFLAGS	:= 	-Werror -Wall -Wextra -O2 -I$(INCDIR)
 RM		:=	/bin/rm -f
 # **************************************************************************** #
 ASCIIART:=	"\033[1;36m\033[19G_ _                       _       _ _ _      __ \
