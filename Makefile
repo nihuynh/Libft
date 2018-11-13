@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/11/13 17:06:42 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/11/13 17:58:00 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,16 +41,21 @@ CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c \
 			ft_isupper.c ft_isxdigit.c
 CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c \
 			ft_atoi_base.c ft_dtoa.c ft_lltoa.c
+PRINTF	:=	printf.c to_base.c string.c length.c flags.c exceptions_func.c \
+    		path.c precision.c pick_f_u_int.c pick_f_base.c write_str.c \
+    		digits_precision.c digits_precision_spec.c pick_f_c.c \
+    		pick_f_w.c pick_f_s.c pick_f_bigs.c pick_f_percent.c pick_f_p.c pick_f_d.c
 OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c
 # Headers files :
 HEADERS	:=	ftconvert.h ftctype.h ftio.h ftlist.h ftmath.h ftmem.h ftstring.h \
-			libft.h ftgnl.h
+			libft.h ftgnl.h ft_printf.h
 # **************************************************************************** #
-SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) $(OTHERS)
+SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) \
+			$(OTHERS) $(PRINTF)
 OBJ		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 HEAD	:=	$(addprefix $(INCDIR)/, $(HEADERS))
 CC		:=	clang
-CFLAGS	:= 	-Werror -Wall -Wextra -O2 -I$(INCDIR)
+CFLAGS	:= 	-Werror -Wall -Wextra -I$(INCDIR)
 RM		:=	/bin/rm -f
 # **************************************************************************** #
 ASCIIART:=	"\033[1;36m\033[19G_ _                       _       _ _ _      __ \

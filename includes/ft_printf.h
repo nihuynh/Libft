@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:57:24 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/13 17:35:25 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/13 17:55:18 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ typedef struct	s_data
 }				t_data;
 
 int				path(char *ptr, va_list param, t_data *data);
-int				ft_atoi(const char *str);
 int				conversion(const char *ptr, va_list param, t_data *data);
 int				int_param(va_list param);
 int				string_param(t_data *data, va_list param);
