@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/11/13 18:51:50 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/11/18 00:25:57 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,26 +75,26 @@ all: $(NAME)
 $(NAME): $(OBJ) $(HEAD)
 	@libtool -static -o $@ $(OBJ)
 	@ranlib $@
-	@printf "\n\033[1;34mLibft\033[25G\033[32mBuilt $@ $(OKLOGO)"
+	@printf "\n\033[1;34m$@\033[25G\033[32mBuilt $@ $(OKLOGO)"
 	@printf $(ASCIIART)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
+$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEAD)
 	@mkdir $(OBJDIR) 2> /dev/null || true
 	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf "\033[1;34mLibft\033[25G\033[33mCompile $< $(OKLOGO)"
+	@printf "\033[1;34m$(NAME)\033[25G\033[33mCompile $< $(OKLOGO)"
 
 clean:
 	@$(RM) $(OBJ)
 	@rmdir $(OBJDIR) 2> /dev/null || true
-	@printf "\033[1;34mLibft\033[25G\033[31mCleaning objs $(OKLOGO)"
+	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning objs $(OKLOGO)"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@printf "\033[1;34mLibft\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
+	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
 
 git: clean
 	@git add -A
-	@printf "\033[1;34mLibft\033[25G\033[31mGit sync $(OKLOGO)"
+	@printf "\033[1;34m$(NAME)\033[25G\033[31mGit sync $(OKLOGO)"
 	@git status
 
 re: fclean all
@@ -103,4 +103,4 @@ norme:
 	@norminette -R CheckForbiddenSourceHeader srcs includes
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
 
-.PHONY:all, $(NAME), clean fclean, git, re, norme
+.PHONY: all, $(NAME), clean fclean, git, re, norme
