@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:54:31 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/13 17:37:05 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/19 00:57:25 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,5 @@ int				pick_f_p(va_list param, t_data *data, const char *ptr)
 		f_width_p(data, nb);
 	ft_strdel(&result);
 	ft_strdel(&str);
-	return (0); 
+	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:54:03 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/13 18:37:39 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/19 00:56:01 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_lltoa_pf(long long value)
+char			*ft_lltoa_pf(long long value)
 {
 	char				*res;
 	size_t				idx;

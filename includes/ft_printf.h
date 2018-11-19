@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:57:24 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/13 17:55:18 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/19 00:55:06 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,5 @@ int				f_width_p(t_data *data, uintptr_t nb);
 int				exception_zero_x(t_data *data, const char *ptr);
 int				exception_bigs(t_data *data, char *ptr);
 int				exception_zero_u(t_data *data);
-
 
 #endif
