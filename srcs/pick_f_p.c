@@ -6,18 +6,11 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:54:31 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/19 00:57:25 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/19 01:39:39 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static char		*initstr(char *str)
-{
-	str[0] = '0';
-	str[1] = 'x';
-	return (str);
-}
 
 static char		*address(uintptr_t nb, char *base)
 {
@@ -95,8 +88,7 @@ int				pick_f_p(va_list param, t_data *data, const char *ptr)
 		str = ft_strnew(ft_strlen(result + 2));
 	if (data->flags[ZERO] > 0)
 		return (pick_f_p2(data, str, result));
-	str = initstr(str);
-	if (nb > 0 || data->precision > 0)
+	if (ft_memcpy(str, "0x", 2) && (nb > 0 || data->precision > 0))
 		str = add_char(str, result, (int)data->precision + 2);
 	data->len = ft_strlen(str);
 	if (data->width > 0 && data->flags[MINUS] == 0)
