@@ -6,13 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:08:44 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/13 17:06:22 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/25 21:14:29 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FTCONVERT_H
 # define FTCONVERT_H
 
+float	ft_atof(char const *str);
 int		ft_atoi(char const *str);
 int		ft_atoi_base(char const *str, int base);
 char	*ft_itoa(int n);

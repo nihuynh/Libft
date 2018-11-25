@@ -6,16 +6,20 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 15:16:38 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/25 19:49:25 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/25 20:45:27 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <stdlib.h>
-# include "ftstring.h"
 
-void	ft_tabdel(char **tab)
+void	ft_tabdel(char **greed)
 {
-	while (*tab)
-		ft_strdel(tab++);
-	free(tab);
+	int i;
+
+	i = -1;
+	if (greed == NULL)
+		return ;
+	while (greed[++i])
+		free(greed[i]);
+	free(greed);
 }
