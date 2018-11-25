@@ -6,15 +6,16 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 15:16:38 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/25 19:45:01 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/25 19:49:25 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ftmem.h"
+# include <stdlib.h>
+# include "ftstring.h"
 
 void	ft_tabdel(char **tab)
 {
 	while (*tab)
-		ft_memdel(*tab++);
-	ft_memdel(tab);
+		ft_strdel(tab++);
+	free(tab);
 }
