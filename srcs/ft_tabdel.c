@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_tabdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:34:50 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/25 06:10:28 by nihuynh          ###   ########.fr       */
+/*   Created: 2018/11/24 15:16:38 by nihuynh           #+#    #+#             */
+/*   Updated: 2018/11/25 19:45:01 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include "ftconvert.h"
-# include "ftctype.h"
-# include "ftio.h"
-# include "ftlist.h"
-# include "ftmath.h"
 # include "ftmem.h"
-# include "ftstring.h"
 
-int		ft_printf(const char *str, ...);
-int		ft_tablen(char **tab);
-void	ft_tabdel(char **tab);
-void	ft_swap(int *a, int *b);
-int		ft_gnl(int const fd, char **line, char *endlsep);
-
-#endif
+void	ft_tabdel(char **tab)
+{
+	while (*tab)
+		ft_memdel(*tab++);
+	ft_memdel(tab);
+}

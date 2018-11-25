@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/11/18 00:25:57 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/11/25 06:10:42 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ PRINTF	:=	printf.c to_base.c string.c length.c flags.c exceptions_func.c \
     		path.c precision.c pick_f_u_int.c pick_f_base.c write_str.c \
     		digits_precision.c digits_precision_spec.c pick_f_c.c \
     		pick_f_w.c pick_f_s.c pick_f_bigs.c pick_f_percent.c pick_f_p.c pick_f_d.c
-OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c
+OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c ft_tabdel.c
 # Headers files :
 HEADERS	:=	ftconvert.h ftctype.h ftio.h ftlist.h ftmath.h ftmem.h ftstring.h \
 			libft.h ftgnl.h ft_printf.h
