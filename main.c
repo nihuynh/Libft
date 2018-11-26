@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/25 19:53:12 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/25 21:17:23 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/26 17:09:29 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void test2(void)
 	printf("%f\n", ft_atof("-0.100001"));
 	printf("%f\n", ft_atof("-0.5"));
 	printf("%f\n", ft_atof("0.5"));
+	printf("%f\n", ft_atof(" -50"));
+	printf("%f\n", ft_atof("50"));
 }
 
 
