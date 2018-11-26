@@ -6,12 +6,12 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/11/25 21:14:49 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/11/26 01:03:40 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	libft.a
-#NAME 	:=	libftprintf.a
+#NAME	:=	libft.a
+NAME 	:=	libftprintf.a
 # directories :
 SRCDIR	:=	srcs
 OBJDIR	:=	objs
@@ -71,10 +71,9 @@ OKLOGO	:=	\033[80G\033[32m[OK]\033[0m\n
 # **************************************************************************** #
 # Rules :
 all: $(NAME)
-
+.PHONY: all
 $(NAME): $(OBJ) $(HEAD)
-	@libtool -static -o $@ $(OBJ)
-	@ranlib $@
+	@libtool -static -o $@ $(OBJ) && ranlib $@
 	@printf "\n\033[1;34m$@\033[25G\033[32mBuilt $@ $(OKLOGO)"
 	@printf $(ASCIIART)
 
@@ -87,20 +86,23 @@ clean:
 	@$(RM) $(OBJ)
 	@rmdir $(OBJDIR) 2> /dev/null || true
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning objs $(OKLOGO)"
-
+.PHONY: clean
 fclean: clean
 	@$(RM) $(NAME)
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
-
+.PHONY: fclean
 git: clean
 	@git add -A
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mGit sync $(OKLOGO)"
 	@git status
-
+.PHONY: git
 re: fclean all
-
+.PHONY: re
+run: all
+	@$(CC) $(CFLAGS) main.c -o test.out $(INC) $(NAME)
+	@./test.out "Les doritos sont merveilleux"
+.PHONY: run
 norme:
 	@norminette -R CheckForbiddenSourceHeader srcs includes
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
-
-.PHONY: all, $(NAME), clean fclean, git, re, norme
+.PHONY: norme

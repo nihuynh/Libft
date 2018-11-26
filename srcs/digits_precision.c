@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   digits_precision.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <sklepper@42.fr>                  +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 11:55:27 by sklepper          #+#    #+#             */
-/*   Updated: 2018/09/27 15:14:52 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/26 00:58:21 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	f_precision(t_data *data)
 {

@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:57:24 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/19 00:55:06 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/25 21:58:12 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <unistd.h>
 # include <inttypes.h>
-# include <wchar.h>
-# include <stdlib.h>
-# include "../includes/libft.h"
 
 # define SHARP 0
 # define ZERO 1
@@ -72,7 +68,6 @@ int				length_z(t_data *data);
 int				width(char *ptr, t_data *data);
 int				precision(const char *ptr, t_data *data);
 int				print_str(char *str, t_data *data, const char *ptr);
-void			print_char(char c, t_data *data);
 int				width_min(const char *ptr, t_data *data);
 char			*to_base(uintmax_t nb, char *base);
 int				pick_f_u(va_list param, t_data *data);

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   path.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 16:05:48 by sklepper          #+#    #+#             */
-/*   Updated: 2018/09/27 10:34:05 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/26 00:57:52 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int		path(char *ptr, va_list param, t_data *data)
 {

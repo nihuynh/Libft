@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pick_f_w.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 16:09:32 by sklepper          #+#    #+#             */
-/*   Updated: 2018/09/26 10:14:05 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/25 22:04:06 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+#include "ftstring.h"
+# include <stdlib.h>
 
 static void	write_quadruple(wchar_t unicode, t_data *data)
 {

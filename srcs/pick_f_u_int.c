@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   pick_f_u_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 12:33:48 by sklepper          #+#    #+#             */
-/*   Updated: 2018/09/26 10:14:05 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/26 01:00:47 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+#include "ftstring.h"
 
 static void			ft_put_u(uintmax_t nb, t_data *data)
 {

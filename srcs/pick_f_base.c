@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pick_f_base.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 12:33:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/09/26 10:14:05 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/25 22:03:09 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "ft_printf.h"
+#include "ftstring.h"
+# include <stdlib.h>
 
 static int	f_x_sharp(t_data *data, const char *ptr)
 {

@@ -6,12 +6,11 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 16:06:39 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/13 17:55:08 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/26 00:57:59 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static int	ft_atoi_pf(const char *str)
 {

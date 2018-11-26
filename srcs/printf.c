@@ -6,12 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 15:59:43 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/13 17:35:37 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/25 21:59:28 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+# include "ftstring.h"
+# include <unistd.h>
 #include <stdlib.h>
 #include <wchar.h>
 #include <locale.h>
@@ -24,7 +25,7 @@ static int	printuntil(const char *str, const char *ptr, t_data *data)
 	i = -1;
 	while (str[++i] && str + i != ptr && str[i] != '\0' && str[i] != '%')
 	{
-		print_char(str[i], data);
+		fill_buff_c(data, str[i]);
 	}
 	return (i);
 }

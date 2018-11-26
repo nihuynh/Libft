@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pick_f_c.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 16:08:58 by sklepper          #+#    #+#             */
-/*   Updated: 2018/09/27 15:21:40 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/25 22:03:50 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+#include "ftstring.h"
+# include <stdlib.h>
 
 int	pick_f_c(va_list param, t_data *data, char ptr)
 {

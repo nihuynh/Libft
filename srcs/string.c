@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   string.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 15:22:18 by sklepper          #+#    #+#             */
-/*   Updated: 2018/09/26 10:14:04 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/25 22:02:22 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+#include "ftstring.h"
+# include <unistd.h>
+#include <stdlib.h>
+
 
 int		fill_buff_c(t_data *data, char c)
 {
@@ -55,9 +58,4 @@ void	determine_w_len(t_data *data, wchar_t unicode)
 		data->len += 3;
 	else if (unicode < 2097152)
 		data->len += 4;
-}
-
-void	print_char(char c, t_data *data)
-{
-	fill_buff_c(data, c);
 }

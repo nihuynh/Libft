@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   pick_f_s.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 16:08:46 by sklepper          #+#    #+#             */
-/*   Updated: 2018/07/23 15:21:38 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/25 22:04:30 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+#include "ftstring.h"
 
 static int	exception_s(t_data *data)
 {

@@ -6,11 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:54:03 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/19 00:56:01 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/25 22:05:58 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "ftstring.h"
+# include <stdlib.h>
 
 char			*ft_lltoa_pf(long long value)
 {

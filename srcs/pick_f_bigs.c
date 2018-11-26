@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   pick_f_bigs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 12:02:47 by sklepper          #+#    #+#             */
-/*   Updated: 2018/07/23 12:14:54 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/25 22:04:54 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+# include <stdlib.h>
 
 static void		determine_lengths(t_data *data, int *len, int i, wchar_t *str)
 {

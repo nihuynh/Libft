@@ -6,11 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:54:31 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/19 01:39:39 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/25 22:05:32 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "ftstring.h"
+#include "ftmem.h"
 
 static char		*address(uintptr_t nb, char *base)
 {

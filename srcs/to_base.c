@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   to_base.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 11:46:34 by sklepper          #+#    #+#             */
-/*   Updated: 2018/09/26 10:14:04 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/25 22:00:21 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+# include "ftstring.h"
 #include "ft_printf.h"
 
 static char	*ft_swap_chars(char *str)
