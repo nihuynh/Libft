@@ -27,5 +27,6 @@ int						ft_memcmp(void const *s1, void const *s2, size_t n);
 void					*ft_memalloc(size_t size);
 void					ft_memdel(void **ap);
 void					*ft_memrcpy(void *dst, void const *src, size_t n);
+void					*ft_safe_alloc(void *res, size_t size);
 
 #endif
