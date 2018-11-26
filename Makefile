@@ -6,12 +6,12 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/11/26 01:03:40 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/11/26 02:14:37 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#NAME	:=	libft.a
-NAME 	:=	libftprintf.a
+NAME	:=	libft.a
+#NAME 	:=	libftprintf.a
 # directories :
 SRCDIR	:=	srcs
 OBJDIR	:=	objs
