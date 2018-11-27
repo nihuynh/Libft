@@ -6,11 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/29 16:10:22 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/09/11 01:51:27 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/27 05:26:59 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftgnl.h"
+#include "ftstring.h"
+#include "ftmath.h"
+#include <unistd.h>
 
 /*
 ** This functions fetch a packet and return how many byte has been read.

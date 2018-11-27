@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   safe_alloc.c                                       :+:      :+:    :+:   */
+/*   ft_safe_alloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:42:16 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/26 17:48:06 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/27 06:53:40 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftmem.h"
-#include "ft_printf.h"
+#include "ftio.h"
 #include <stdlib.h>
 
 void	*ft_safe_alloc(size_t size)
 {
 	void *res;
 
-	res = malloc(sizeof(size));
-	if (res == NULL)
+	if (!(res = malloc(sizeof(size))))
 	{
-		ft_printf("Malloc Error");
+		ft_putendl("Malloc Error");
 		exit (0);
 	}
 	ft_bzero(res, size);

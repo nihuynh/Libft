@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:09:10 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/08/20 15:21:48 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/27 06:54:24 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ void	ft_putctab(char **tab, char c);
 void	ft_print_value(char *name, int value);
 void	ft_error(const char function[], int line);
 int		ft_fopen_read(char *file_name);
+int		ft_gnl(int const fd, char **line, char *endlsep);
+int		ft_printf(const char *str, ...);
 
 #endif
