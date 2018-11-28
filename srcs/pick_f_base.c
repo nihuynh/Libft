@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 12:33:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/26 02:16:21 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/28 00:40:52 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "ftstring.h"
-# include <stdlib.h>
+#include <stdlib.h>
 
 static int	f_x_sharp(t_data *data, const char *ptr)
 {

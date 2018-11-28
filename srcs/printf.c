@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 15:59:43 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/26 02:16:21 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/11/28 00:40:58 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-# include "ftstring.h"
-# include <unistd.h>
+#include "ftstring.h"
+#include <unistd.h>
 #include <stdlib.h>
 #include <wchar.h>
 #include <locale.h>

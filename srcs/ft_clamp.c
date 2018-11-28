@@ -6,13 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 03:00:25 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/27 03:05:03 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/28 00:38:24 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ftmath.h"
+#include "ftmath.h"
 
- int     ft_clamp(int value, int low, int high)
+int	ft_clamp(int value, int low, int high)
 {
-	return (ft_min(ft_max(value, low), high)); 
+	return (ft_min(ft_max(value, low), high));
 }

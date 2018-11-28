@@ -6,12 +6,12 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/25 19:53:12 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/26 17:09:29 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/28 00:40:21 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "includes/libft.h"
-# include <stdio.h>
+#include "includes/libft.h"
+#include <stdio.h>
 
 void test1(int ac, char **av)
 {
