@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/29 16:10:22 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/27 05:26:59 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/28 12:15:38 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,9 @@ int						ft_gnl(int const fd, char **line, char *endl)
 	}
 	ret = process_line(&memory[fd], line, endl);
 	if (ret == 0)
+	{
 		ft_strdel(&memory[fd].save);
+		ft_strdel(line);
+	}
 	return (ret);
 }
