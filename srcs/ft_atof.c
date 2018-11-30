@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/25 20:55:06 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/27 05:52:25 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/11/30 03:38:39 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ float		ft_atof(char const *str)
 		str++;
 	neg = (*str == 45) ? 1 : 0;
 	res = ft_atoi(str);
-	if (!(str = ft_strchr(str, '.')))
+	while (*str && (ft_isdigit(*str) || *str == '-' || *str == '+'))
+		str++;
+	if (*str != '.')
 		return (res);
 	str++;
 	while (*str && (*str >= 48 && *str <= 57))
