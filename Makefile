@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/11/27 06:10:39 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/12/01 15:42:53 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ LIST	:=	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c \
 			ft_lstat.c ft_lstget.c
 CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c \
 			ft_isdigit.c ft_isgraph.c ft_islower.c ft_isprint.c ft_isspace.c \
-			ft_isupper.c ft_isxdigit.c
+			ft_isupper.c ft_isxdigit.c ft_isnumber.c
 CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c \
 			ft_atoi_base.c ft_dtoa.c ft_lltoa.c ft_atof.c
 PRINTF	:=	printf.c to_base.c string.c length.c flags.c exceptions_func.c \
