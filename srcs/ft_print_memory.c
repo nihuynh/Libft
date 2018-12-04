@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 16:14:05 by flonger           #+#    #+#             */
-/*   Updated: 2018/12/04 02:28:39 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/04 02:37:30 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void		*ft_print_memory(void *addr, size_t size)
 		return (addr);
 	str = addr;
 	i = 0;
-    nbl = (size % 16 == 0) ? 0 : 1;
+	nbl = (size % 16 == 0) ? 0 : 1;
 	while (i < size / 16 + nbl)
 	{
 		ft_dec_hexa(i * 16, 8);
