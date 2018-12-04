@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/12/04 02:26:54 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/12/04 02:35:36 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,8 @@ _\033[0m\n\033[1;36m\033[18G(_) |                     | |     | (_) |    / _| |\
 | | | | | | |_) | | | |_\033[0m\n\033[1;34m\033[12G|_| |_|_|_| |_|\\__,_|\\__, \
 |_| |_|_| |_| |_|_|_.__/|_|  \\__|\033[0m\n\033[1;36m\033[33G __/ |\033[0m\n\
 \033[1;36m\033[33G|___/\033[0m\n"
-OKLOGO	:=	\033[80G\033[32m[OK]\033[0m\n
+OKLOGO		:=	\033[80G\033[32m[OK]\033[0m\n
+GREP_ERR	:=	grep "Error" -C1 2> /dev/null || true
 # **************************************************************************** #
 # Rules :
 all: $(NAME)
@@ -105,6 +106,6 @@ run: all
 	@./test.out "Les doritos sont merveilleux"
 .PHONY: run
 norme:
-	@norminette -R CheckForbiddenSourceHeader srcs includes
+	@norminette -R CheckForbiddenSourceHeader srcs includes | $(GREP_ERR)
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
 .PHONY: norme
