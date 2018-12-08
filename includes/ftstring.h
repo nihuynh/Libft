@@ -6,14 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:09:51 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/04/07 01:09:51 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/08 01:04:24 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FTSTRING_H
 # define FTSTRING_H
 
-# include <string.h>
+# include <stddef.h>
 
 size_t	ft_strlen(char const *str);
 char	*ft_strdup(char const *src);

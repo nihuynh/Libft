@@ -6,14 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:10:23 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/26 02:16:21 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/12/08 01:04:59 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FTLIST_H
 # define FTLIST_H
 
-# include <string.h>
+# include <stddef.h>
 
 typedef struct		s_list
 {
