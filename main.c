@@ -6,16 +6,16 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/25 19:53:12 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/12/04 13:56:08 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/12/08 22:03:40 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 #include <stdio.h>
 
-void test1(int ac, char **av)
+void	test1(int ac, char **av)
 {
-	char **split;
+	char	**split;
 
 	split = NULL;
 	if ((ac == 2) && !(split = ft_strsplit(av[1], 32)))
@@ -23,9 +23,8 @@ void test1(int ac, char **av)
 	ft_tabdel(split);
 }
 
-void test2(void)
+void	test2(void)
 {
-
 	printf("%f\n", ft_atof("0"));
 	printf("%f\n", ft_atof("-0.1"));
 	printf("%f\n", ft_atof("-0.100001"));
@@ -35,8 +34,7 @@ void test2(void)
 	printf("%f\n", ft_atof("50"));
 }
 
-
-int	main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	test1(ac, av);
 	test2();
