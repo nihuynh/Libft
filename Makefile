@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/12/09 17:40:43 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/12/09 17:57:28 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEAD)
 
 clean:
 	@$(RM) $(OBJ)
+	@$(RM) UT_printf.out UT_lib.out
 	@rmdir $(OBJDIR) 2> /dev/null || true
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning objs $(OKLOGO)"
 .PHONY: clean
@@ -100,12 +101,12 @@ git: clean
 re: fclean all
 .PHONY: re
 run: all
-	@$(CC) $(CFLAGS) main.c -o test.out $(INC) $(NAME)
-	@./test.out "Les doritos sont merveilleux"
+	@$(CC) $(CFLAGS) main.c -o UT_lib.out $(INC) $(NAME)
+	@./UT_lib.out "Les doritos sont merveilleux"
 .PHONY: run
 runprintf: all
-	$(CC) $(CFLAGS) -o UT_nico	printf_main.c -I includes libft.a
-	./UT_nico
+	@$(CC) $(CFLAGS) -o UT_printf.out printf_main.c -I includes libft.a
+	@./UT_printf.out
 .PHONY: runprintf
 norme:
 	@norminette -R CheckForbiddenSourceHeader srcs includes | $(GREP_ERR)

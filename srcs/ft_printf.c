@@ -6,13 +6,12 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 15:09:45 by modaouch          #+#    #+#             */
-/*   Updated: 2018/12/09 17:40:10 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/09 17:56:46 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_conv.h"
-#include "../includes/ft_printf.h"
-#include <string.h>
+#include "ft_conv.h"
+#include "libft.h"
 
 static int		ft_n_precision(const char *format)
 {
@@ -21,15 +20,14 @@ static int		ft_n_precision(const char *format)
 	return (-1);
 }
 
-static int		ft_n_conv(const char *format)
+static int		ft_n_conv(const char *fo)
 {
 	int			n;
 
 	n = 0;
 	while (g_convtab[n].conv)
 	{
-		if (!ft_strncmp(g_convtab[n].conv, format,\
-			ft_strlen(g_convtab[n].conv)))
+		if (!ft_strncmp(g_convtab[n].conv, fo, ft_strlen(g_convtab[n].conv)))
 			return (n);
 		n++;
 	}

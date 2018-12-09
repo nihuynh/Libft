@@ -6,14 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 01:07:15 by modaouch          #+#    #+#             */
-/*   Updated: 2018/12/09 17:16:02 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/09 17:56:25 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_CONV_H
 # define FT_CONV_H
 
-# include "../includes/ft_printf.h"
+# include "ft_printf.h"
 
 t_conv g_convtab[] =
 {

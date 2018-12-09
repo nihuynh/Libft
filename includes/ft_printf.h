@@ -6,17 +6,15 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 15:09:38 by modaouch          #+#    #+#             */
-/*   Updated: 2018/12/09 17:24:50 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/09 17:58:57 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
+
 # include <stdarg.h>
-# include "libft.h"
+# include <stddef.h>
 
 typedef struct	s_arg
 {
@@ -43,4 +41,5 @@ void			ft_hex(va_list ap, t_arg *stk);
 void			ft_hex_up(va_list ap, t_arg *stk);
 void			ft_octal(va_list ap, t_arg *stk);
 void			ft_string(va_list ap, t_arg *stk);
+
 #endif

@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conv1.c                                         :+:      :+:    :+:   */
+/*   ft_printf_conv1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 02:34:36 by modaouch          #+#    #+#             */
-/*   Updated: 2018/12/09 17:21:05 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/09 18:05:18 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
+#include "ftio.h"
 
 void	ft_percent(va_list ap, t_arg *stk)
 {
