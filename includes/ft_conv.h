@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 01:07:15 by modaouch          #+#    #+#             */
-/*   Updated: 2018/12/09 20:11:58 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/09 20:47:00 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@
 
 t_conv g_convtab[] =
 {
-	{"%", &ft_percent},
-	{"d", &ft_digit},
-	{"i", &ft_digit},
-	{"D", &ft_digit},
-	{"o", &ft_octal},
-	{"s", &ft_string},
 	{"c", &ft_char},
+	{"s", &ft_string},
+	{"p", &ft_pointer},
+	{"d", &ft_digit},
+	{"D", &ft_digit},
+	{"i", &ft_digit},
+	{"o", &ft_octal},
 	{"x", &ft_hex},
 	{"X", &ft_hex_up},
 	{"f", &ft_double},
-	{"p", &ft_pointer},
+	{"%", &ft_percent},
 	{0, NULL}
 };
 
