@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 01:07:15 by modaouch          #+#    #+#             */
-/*   Updated: 2018/12/09 17:56:25 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/09 20:11:58 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ t_conv g_convtab[] =
 	{"c", &ft_char},
 	{"x", &ft_hex},
 	{"X", &ft_hex_up},
-	{"s", &ft_string},
+	{"f", &ft_double},
+	{"p", &ft_pointer},
 	{0, NULL}
 };
 

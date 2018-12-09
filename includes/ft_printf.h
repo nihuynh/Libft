@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 15:09:38 by modaouch          #+#    #+#             */
-/*   Updated: 2018/12/09 17:58:57 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/09 20:12:11 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ void			ft_hex(va_list ap, t_arg *stk);
 void			ft_hex_up(va_list ap, t_arg *stk);
 void			ft_octal(va_list ap, t_arg *stk);
 void			ft_string(va_list ap, t_arg *stk);
+void			ft_double(va_list ap, t_arg *stk);
+void			ft_pointer(va_list ap, t_arg *stk);
 
 #endif
