@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 15:09:38 by modaouch          #+#    #+#             */
-/*   Updated: 2018/12/09 20:12:11 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/09 20:34:26 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct	s_conv
 	void		(*convert)(va_list ap, t_arg *stk);
 }				t_conv;
 
-int				ft_printf(const char *format, ...);
 int				ft_analyse(t_arg *stk);
 void			ft_space(va_list ap, t_arg *stk);
 void			ft_percent(va_list ap, t_arg *stk);

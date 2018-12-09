@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 19:31:09 by modaouch          #+#    #+#             */
-/*   Updated: 2018/12/09 20:19:24 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/09 20:20:34 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_double(va_list ap, t_arg *stk)
 	stk->conv = ft_dtoa(va_arg(ap, double), 6);
 	ft_putstr(stk->conv);
 	ft_strdel(&stk->conv);
-	stk->i += 1;
+	stk->i++;
 }
 
 void	ft_pointer(va_list ap, t_arg *stk)
@@ -42,5 +42,5 @@ void	ft_pointer(va_list ap, t_arg *stk)
 	ft_putstr("0x");
 	ft_putstr(stk->conv);
 	ft_strdel(&stk->conv);
-	stk->i += 1;
+	stk->i++;
 }

@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/12/09 20:17:43 by nihuynh          ###   ########.fr        #
+#    Updated: 2018/12/09 20:41:19 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,18 +46,20 @@ CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c \
 			ft_atoi_base.c ft_dtoa.c ft_lltoa.c ft_atof.c ft_lltoa_base.c
 PRINTF	:=	ft_printf_conv1.c ft_printf_conv2.c ft_printf_prec1.c ft_printf.c
 OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c ft_tabdel.c
-# Headers files :
-HEADERS	:=	ftconvert.h ftctype.h ftio.h ftlist.h ftmath.h ftmem.h ftstring.h \
-			libft.h ftgnl.h ft_printf.h ft_conv.h
 # **************************************************************************** #
 SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) \
 			$(OTHERS) $(PRINTF)
 OBJ		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
-HEAD	:=	$(addprefix $(INCDIR)/, $(HEADERS))
+DEP		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.d))
+INC			:=	-I $(INCDIR)
+# **************************************************************************** #
+# make specs :
 CC		:=	clang
-CFLAGS	:=	-Werror -Wall -Wextra -O2 -I$(INCDIR)
+CFLAGS	:=	-Werror -Wall -Wextra -O2
 CFLAGS	+=	-Wstrict-aliasing -pedantic -Wunreachable-code
 RM		:=	/bin/rm -f
+.SILENT:
+.SUFFIXES:
 # **************************************************************************** #
 ASCIIART:=	"\033[1;36m\033[19G_ _                       _       _ _ _      __ \
 _\033[0m\n\033[1;36m\033[18G(_) |                     | |     | (_) |    / _| |\
@@ -73,42 +75,43 @@ GREP_ERR	:=	grep "Error" -C1 2> /dev/null || true
 # Rules :
 all: $(NAME)
 .PHONY: all
-$(NAME): $(OBJ) $(HEAD)
-	@libtool -static -o $@ $(OBJ) && ranlib $@
-	@printf "\n\033[1;34m$@\033[25G\033[32mBuilt $@ $(OKLOGO)"
-	@printf $(ASCIIART)
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEAD)
-	@mkdir $(OBJDIR) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	@printf "\033[1;34m$(NAME)\033[25G\033[33mCompile $< $(OKLOGO)"
+$(NAME): $(OBJ)
+	libtool -static -o $@ $(OBJ) && ranlib $@
+	printf "\n\033[1;34m$@\033[25G\033[32mBuilt $@ $(OKLOGO)"
+	printf $(ASCIIART)
+-include $(DEP)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	mkdir $(OBJDIR) 2> /dev/null || true
+	$(CC) $(CFLAGS) -MMD -c -o $@ $< $(INC)
+	printf "\033[1;34m$(NAME)\033[25G\033[33mCompile $< $(OKLOGO)"
 
 clean:
-	@$(RM) $(OBJ)
-	@$(RM) UT_printf.out UT_lib.out
-	@rmdir $(OBJDIR) 2> /dev/null || true
-	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning objs $(OKLOGO)"
+	$(RM) $(OBJ)
+	$(RM) $(DEP)
+	$(RM) UT_printf.out UT_lib.out
+	rmdir $(OBJDIR) 2> /dev/null || true
+	printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning objs $(OKLOGO)"
 .PHONY: clean
 fclean: clean
-	@$(RM) $(NAME)
-	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
+	$(RM) $(NAME)
+	printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
 .PHONY: fclean
 git: clean
-	@git add -A
-	@printf "\033[1;34m$(NAME)\033[25G\033[31mGit sync $(OKLOGO)"
-	@git status
+	git add -A
+	printf "\033[1;34m$(NAME)\033[25G\033[31mGit sync $(OKLOGO)"
+	git status
 .PHONY: git
 re: fclean all
 .PHONY: re
 run: all
-	@$(CC) $(CFLAGS) main.c -o UT_lib.out $(INC) $(NAME)
-	@./UT_lib.out "Les doritos sont merveilleux"
+	$(CC) $(CFLAGS) main.c -o UT_lib.out $(INC) $(NAME)
+	./UT_lib.out "Les doritos sont merveilleux"
 .PHONY: run
 runprintf: all
-	@$(CC) $(CFLAGS) -o UT_printf.out printf_main.c -I includes libft.a
-	@./UT_printf.out
+	$(CC) $(CFLAGS) -o UT_printf.out printf_main.c -I includes libft.a
+	./UT_printf.out
 .PHONY: runprintf
 norme:
-	@norminette -R CheckForbiddenSourceHeader srcs includes | $(GREP_ERR)
-	@printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
+	norminette -R CheckForbiddenSourceHeader srcs includes | $(GREP_ERR)
+	printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
 .PHONY: norme

@@ -6,11 +6,11 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:23:49 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/12/09 20:07:35 by nihuynh          ###   ########.fr       */
+/*   Updated: 2018/12/09 20:34:54 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+# include "ftio.h"
 # include <stdio.h>
 
 void test1(void)
