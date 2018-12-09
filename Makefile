@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/12/04 13:56:08 by sklepper         ###   ########.fr        #
+#    Updated: 2018/12/09 17:40:43 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ INCDIR	:=	includes
 # Sources files :
 IO		:=	ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c \
 			ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c \
-			ft_puttab.c ft_print_value.c ft_fopen_read.c
+			ft_puttab.c ft_print_value.c ft_fopen_read.c ft_putnbr_base.c \
+			ft_putnbr_base_low.c
 STRING	:=	ft_str_is_alpha.c ft_str_is_lowercase.c ft_str_is_numeric.c \
 			ft_str_is_printable.c ft_str_is_uppercase.c ft_strcapitalize.c \
 			ft_strcasecmp.c ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c \
@@ -43,14 +44,11 @@ CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c \
 			ft_isupper.c ft_isxdigit.c ft_isnumber.c
 CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c \
 			ft_atoi_base.c ft_dtoa.c ft_lltoa.c ft_atof.c
-PRINTF	:=	printf.c to_base.c string.c length.c flags.c exceptions_func.c \
-    		path.c precision.c pick_f_u_int.c pick_f_base.c write_str.c \
-    		digits_precision.c digits_precision_spec.c pick_f_c.c \
-    		pick_f_w.c pick_f_s.c pick_f_bigs.c pick_f_percent.c pick_f_p.c pick_f_d.c
+PRINTF	:=	ft_printf_conv1.c ft_printf_conv2.c ft_printf_prec1.c ft_printf.c
 OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c ft_tabdel.c
 # Headers files :
 HEADERS	:=	ftconvert.h ftctype.h ftio.h ftlist.h ftmath.h ftmem.h ftstring.h \
-			libft.h ftgnl.h ft_printf.h
+			libft.h ftgnl.h ft_printf.h ft_conv.h
 # **************************************************************************** #
 SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) \
 			$(OTHERS) $(PRINTF)
@@ -105,6 +103,10 @@ run: all
 	@$(CC) $(CFLAGS) main.c -o test.out $(INC) $(NAME)
 	@./test.out "Les doritos sont merveilleux"
 .PHONY: run
+runprintf: all
+	$(CC) $(CFLAGS) -o UT_nico	printf_main.c -I includes libft.a
+	./UT_nico
+.PHONY: runprintf
 norme:
 	@norminette -R CheckForbiddenSourceHeader srcs includes | $(GREP_ERR)
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
