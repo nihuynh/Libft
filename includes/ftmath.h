@@ -19,5 +19,6 @@ int		ft_btw(int value, int a, int b);
 int		ft_min(int a, int b);
 int		ft_max(int a, int b);
 int		ft_clamp(int value, int low, int high);
+float	ft_clampf(float value, float low, float high);
 
 #endif
