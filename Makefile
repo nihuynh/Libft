@@ -6,12 +6,13 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2018/12/11 18:10:29 by sklepper         ###   ########.fr        #
+#    Updated: 2018/12/18 15:36:43 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:=	libft.a
 #NAME 	:=	libftprintf.a
+RUNMODE	?=  dev
 # directories :
 SRCDIR	:=	srcs
 OBJDIR	:=	objs
@@ -54,10 +55,16 @@ OBJ		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 DEP		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.d))
 INC			:=	-I $(INCDIR)
 # **************************************************************************** #
-# make specs :
+# specs :
 CC		:=	clang
-CFLAGS	:=	-Werror -Wall -Wextra -O2
+CFLAGS	:=	-Werror -Wall -Wextra
 CFLAGS	+=	-Wstrict-aliasing -pedantic -Wunreachable-code
+ifeq ($(RUNMODE),dev)
+    CFLAGS	+=	-g3 -O0
+	# CFLAGS	+=	-Wpedantic -ggdb -fsanitize=address
+else
+	CFLAGS	+= -O2
+endif
 RM		:=	/bin/rm -f
 .SILENT:
 .SUFFIXES:
