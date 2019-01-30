@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/01/03 05:02:15 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/01/30 20:43:09 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,8 +65,10 @@ ifeq ($(RUNMODE),dev)
 else
 	CFLAGS	+= -O2
 endif
-RM		:=	/bin/rm -f
+ifndef VERBOSE
 .SILENT:
+endif
+RM		:=	/bin/rm -f
 .SUFFIXES:
 # **************************************************************************** #
 ASCIIART:=	"\033[1;36m\033[19G_ _                       _       _ _ _      __ \
@@ -85,28 +87,28 @@ all: $(NAME)
 .PHONY: all
 $(NAME): $(OBJ)
 	libtool -static -o $@ $(OBJ) && ranlib $@
-	printf "\n\033[1;34m$@\033[25G\033[32mBuilt $@ $(OKLOGO)"
-	printf $(ASCIIART)
+	@printf "\n\033[1;34m$@\033[25G\033[32mBuilt $@ $(OKLOGO)"
+	@printf $(ASCIIART)
 -include $(DEP)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	mkdir $(OBJDIR) 2> /dev/null || true
 	$(CC) $(CFLAGS) -MMD -c -o $@ $< $(INC)
-	printf "\033[1;34m$(NAME)\033[25G\033[33mCompile $< $(OKLOGO)"
+	@printf "\033[1;34m$(NAME)\033[25G\033[33mCompile $< $(OKLOGO)"
 
 clean:
 	$(RM) $(OBJ)
 	$(RM) $(DEP)
 	$(RM) UT_printf.out UT_lib.out
 	rmdir $(OBJDIR) 2> /dev/null || true
-	printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning objs $(OKLOGO)"
+	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning objs $(OKLOGO)"
 .PHONY: clean
 fclean: clean
 	$(RM) $(NAME)
-	printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
+	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
 .PHONY: fclean
 git: clean
 	git add -A
-	printf "\033[1;34m$(NAME)\033[25G\033[31mGit sync $(OKLOGO)"
+	@printf "\033[1;34m$(NAME)\033[25G\033[31mGit sync $(OKLOGO)"
 	git status
 .PHONY: git
 re: fclean all
@@ -121,5 +123,5 @@ runprintf: all
 .PHONY: runprintf
 norme:
 	norminette -R CheckForbiddenSourceHeader srcs includes | $(GREP_ERR)
-	printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
+	@printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
 .PHONY: norme
