@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_swapf.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:34:50 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/03/07 15:48:50 by sklepper         ###   ########.fr       */
+/*   Created: 2019/03/07 15:46:12 by sklepper          #+#    #+#             */
+/*   Updated: 2019/03/07 15:47:44 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+void	ft_swapf(float *a, float *b)
+{
+	float tmp;
 
-# include "ftconvert.h"
-# include "ftctype.h"
-# include "ftio.h"
-# include "ftlist.h"
-# include "ftmath.h"
-# include "ftmem.h"
-# include "ftstring.h"
-
-int		ft_tablen(char **tab);
-void	ft_tabdel(char **tab);
-void	ft_swap(int *a, int *b);
-void	ft_swapf(float *a, float *b);
-
-
-#endif
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
