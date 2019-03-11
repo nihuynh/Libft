@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:34:50 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/03/07 15:48:50 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/03/11 15:03:32 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int		ft_tablen(char **tab);
 void	ft_tabdel(char **tab);
 void	ft_swap(int *a, int *b);
 void	ft_swapf(float *a, float *b);
-
 
 #endif
