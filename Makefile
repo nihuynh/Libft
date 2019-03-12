@@ -6,7 +6,7 @@
 #    By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/03/07 15:48:23 by sklepper         ###   ########.fr        #
+#    Updated: 2019/03/12 17:05:22 by tdarchiv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ ifeq ($(RUNMODE),dev)
     CFLAGS	+=	-g3 -O0
 	# CFLAGS	+=	-Wpedantic -ggdb -fsanitize=address
 else
-	CFLAGS	+= -O2
+	CFLAGS	+= -O2 -march=native -flto
 endif
 ifndef VERBOSE
 .SILENT:
