@@ -6,7 +6,7 @@
 #    By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/03/12 17:05:22 by tdarchiv         ###   ########.fr        #
+#    Updated: 2019/03/13 16:27:53 by sklepper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ MEM		:=	ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
 			ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_memrcpy.c \
 			ft_safe_alloc.c ft_print_memory.c
 MATH	:=	ft_abs.c ft_absf.c ft_min.c ft_max.c ft_btw.c ft_clamp.c \
-			ft_clampf.c
+			ft_clampf.c ft_maxf.c
 LIST	:=	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c \
 			ft_lstnew.c ft_lstrev.c ft_lstlen.c  ft_lstaddbk.c ft_lstlast.c \
 			ft_lstat.c ft_lstget.c
