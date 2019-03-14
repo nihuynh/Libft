@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+         #
+#    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/03/13 16:27:53 by sklepper         ###   ########.fr        #
+#    Updated: 2019/03/14 21:27:43 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c \
 			ft_atoi_base.c ft_dtoa.c ft_lltoa.c ft_atof.c ft_lltoa_base.c
 PRINTF	:=	ft_printf_conv1.c ft_printf_conv2.c ft_printf_prec1.c ft_printf.c
 OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c ft_tabdel.c \
-			ft_swapf.c
+			ft_swapf.c livetime.c
 # **************************************************************************** #
 SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) \
 			$(OTHERS) $(PRINTF)
