@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 00:25:07 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/03/14 21:28:42 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/03/15 16:49:14 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ struct				s_lt
 	t_lt			*next;
 };
 
-void				*lt_add(t_lt **lt, void *data, void destruct(void *), int mode);
+void				*lt_add(t_lt **lt, void *d, void destruct(void *), int mod);
 int					lt_detach(t_lt **lt, void *data);
 int					lt_destroy(t_lt **lt);
 

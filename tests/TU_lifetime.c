@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TU_livetime.c                                      :+:      :+:    :+:   */
+/*   TU_lifetime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 01:54:39 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/03/15 00:54:57 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/03/15 17:44:05 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** doit TU_livetime.c ../libft.a -I../includes
+** doit TU_lifetime.c ../libft.a -I../includes
 */
 
 # include <stdlib.h>
 # include <stdio.h>
-# include "livetime.h"
+# include "lifetime.h"
 
 void	test_normal_case()
 {
