@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TU_lifetime.c                                      :+:      :+:    :+:   */
+/*   ut_lifetime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 01:54:39 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/03/15 17:44:05 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/03/15 20:27:07 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** doit TU_lifetime.c ../libft.a -I../includes
+** doit ut_lifetime.c ../libft.a -I../includes
 */
 
-# include <stdlib.h>
-# include <stdio.h>
-# include "lifetime.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include "lifetime.h"
 
-void	test_normal_case()
+void	test_normal_case(void)
 {
 	t_lt	*lt __attribute__((cleanup(lt_destroy)));
 	int		*tab;
@@ -33,7 +33,7 @@ void	test_normal_case()
 	tab3 = lt_add(&lt, malloc(256 * sizeof(int)), free, EXIT_ONFAIL);
 }
 
-void	test_normal_detatch()
+void	test_normal_detatch(void)
 {
 	t_lt	*lt __attribute__((cleanup(lt_destroy)));
 	int		*tab;
@@ -52,7 +52,7 @@ void	test_normal_detatch()
 	free(tab2);
 }
 
-void	test_detatch_empty_lt()
+void	test_detatch_empty_lt(void)
 {
 	t_lt	*lt __attribute__((cleanup(lt_destroy)));
 	int		*tab;
@@ -64,7 +64,7 @@ void	test_detatch_empty_lt()
 	lt_detach(&lt, tab1);
 }
 
-void	test_double_destroy()
+void	test_double_destroy(void)
 {
 	t_lt	*lt __attribute__((cleanup(lt_destroy)));
 	int		*tab;
@@ -77,24 +77,13 @@ void	test_double_destroy()
 		printf("error durring destruct of the lt\n");
 }
 
-void	test_destroy_empty()
+int		main(void)
 {
-	t_lt	*lt __attribute__((cleanup(lt_destroy)));
-
-	lt = NULL;
-}
-
-int main(void)
-{
-
-	// Normal Tests :
-	//test_normal_case();
-	// test_normal_detatch();
-
-	// Errors Tests :
-	// test_detatch_empty_lt();
-	// test_double_destroy();
-	test_destroy_empty();
-	while (42) ;
+	test_normal_case();
+	test_normal_detatch();
+	test_detatch_empty_lt();
+	test_double_destroy();
+	while (42)
+		;
 	return (0);
 }
