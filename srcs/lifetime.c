@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 02:30:46 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/03/15 17:40:20 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/03/15 18:03:16 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ int		lt_destroy(t_lt **lt)
 		return (1);
 	while (*lt != NULL)
 	{
-		(*lt)->destruct((*lt)->data);
+		if ((*lt)->destruct)
+			(*lt)->destruct((*lt)->data);
 		(*lt)->data = NULL;
 		next_lt = (*lt)->next;
 		(*lt)->next = NULL;
