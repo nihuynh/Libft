@@ -6,21 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 02:30:46 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/03/15 18:03:16 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/03/18 11:25:40 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "lifetime.h"
-
-void	ft_memdel(void **ap)
-{
-	if (ap)
-	{
-		free(*ap);
-		*ap = NULL;
-	}
-}
+#include "ftmem.h"
+#include "ftio.h"
 
 void	*lt_add(t_lt **lt, void *data, void destruct(void *), int mode)
 {
@@ -38,7 +31,7 @@ void	*lt_add(t_lt **lt, void *data, void destruct(void *), int mode)
 	}
 	lt_destroy(lt);
 	if (mode == EXIT_ONFAIL)
-		exit(1);
+		ft_error(__func__, __LINE__);
 	return (NULL);
 }
 
