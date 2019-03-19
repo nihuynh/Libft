@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:10:23 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/12/08 15:43:43 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/03/19 16:35:55 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ void				ft_lstrev(t_list **alst);
 t_list				*ft_lstlast(t_list *alst);
 t_list				*ft_lstat(t_list *alst, unsigned int n);
 t_list				*ft_lstget(t_list *alst, int v, int (*cmp)(void *c, int v));
+void				*ft_lstgetelt(t_list *alst, int (*cmp)(void *c, void *k),
+	void *key);
 
 #endif
