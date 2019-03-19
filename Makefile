@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/03/18 12:09:39 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/03/19 01:12:06 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ $(NAME): $(OBJ)
 -include $(DEP)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	mkdir $(OBJDIR) 2> /dev/null || true
-	$(CC) $(CFLAGS) -MMD -c -o $@ $< $(INC)
+	$(CC) $(CFLAGS) -MMD -MP -c -o $@ $< $(INC)
 	@printf "\033[1;34m$(NAME)\033[25G\033[33mCompile $< $(OKLOGO)"
 
 clean:
