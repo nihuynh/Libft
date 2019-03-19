@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pick_f_percent.c                                   :+:      :+:    :+:   */
+/*   ft_line_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/09 16:09:15 by sklepper          #+#    #+#             */
-/*   Updated: 2018/11/26 02:16:21 by sklepper         ###   ########.fr       */
+/*   Created: 2019/03/19 15:33:21 by nihuynh           #+#    #+#             */
+/*   Updated: 2019/03/19 15:39:16 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ftgnl.h"
+#include "ftstring.h"
+#include "ftio.h"
+#include <fcntl.h>
+#include <unistd.h>
 
-int	pick_f_percent(t_data *data)
+
+int	ft_line_count(char *filename)
 {
-	data->len = 1;
-	data->precision = 0;
-	if (data->flags[MINUS])
+	int		fd;
+	char	*line;
+	int		line_count;
+
+	line_count = 0;
+	if ((fd = open(filename, O_RDONLY)) == -1)
+		ft_error(__func__, __LINE__);
+	while (ft_gnl(fd, &line, "\n") > 0)
 	{
-		fill_buff_c(data, '%');
-		f_width(data);
+		line_count++;
+		ft_strdel(&line);
 	}
-	else if (data->flags[ZERO])
-	{
-		f_zero(data);
-		fill_buff_c(data, '%');
-	}
-	else if (data->width > 0)
-	{
-		f_width(data);
-		fill_buff_c(data, '%');
-	}
-	else
-		fill_buff_c(data, '%');
-	return (0);
+	close(fd);
+	return (line_count);
 }
