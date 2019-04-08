@@ -42,6 +42,7 @@ target_sources(ft PRIVATE
         srcs/ft_lstdel.c
         srcs/ft_lstdelone.c
         srcs/ft_lstget.c
+        srcs/ft_lstgetelt.c
         srcs/ft_lstiter.c
         srcs/ft_lstlast.c
         srcs/ft_lstlen.c
@@ -127,4 +128,6 @@ target_sources(ft PRIVATE
         srcs/ft_tablen.c
         srcs/ft_tolower.c
         srcs/ft_toupper.c
-        srcs/ft_wordcount.c)
+        srcs/ft_wordcount.c
+        srcs/ft_curr_usec.c
+        srcs/ft_line_count.c)
