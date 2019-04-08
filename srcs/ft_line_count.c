@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 15:33:21 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/03/19 15:39:16 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/04/08 17:44:22 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "ftio.h"
 #include <fcntl.h>
 #include <unistd.h>
-
 
 int	ft_line_count(char *filename)
 {

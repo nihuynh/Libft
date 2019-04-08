@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:34:50 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/03/19 15:36:31 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/04/08 17:36:04 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	ft_swap(int *a, int *b);
 void	ft_swapf(float *a, float *b);
 long	ft_curr_usec(void);
 int		ft_line_count(char *filename);
+int		ft_options(int ac, char **av, char *usage);
 
 #endif
