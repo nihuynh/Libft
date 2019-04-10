@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/04/08 17:32:18 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/04/10 21:41:20 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -124,6 +124,6 @@ runprintf: all
 	./UT_printf.out
 .PHONY: runprintf
 norme:
-	norminette -R CheckForbiddenSourceHeader srcs includes | $(GREP_ERR)
+	norminette srcs includes | $(GREP_ERR)
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
 .PHONY: norme
