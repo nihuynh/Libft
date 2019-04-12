@@ -1,5 +1,5 @@
 # Libft
-
+![Built State](https://travis-ci.org/nihuynh/Libft.svg?branch=master)
 ---
 
 ![Ascii art](https://github.com/nihuynh/Libft/blob/master/docs/logolib.png)
@@ -11,7 +11,7 @@ _The goal of the project is to recode multiple standards functions and create yo
 
 ---
 
-### Credits for the awesome tests: 
+### Credits for the awesome tests:
 * [Credit to alelievr](https://github.com/alelievr/libft-unit-test)
 * [Credit to NegMozzie](https://github.com/NegMozzie/libft-test)
 * [Credit to jtoty](https://github.com/jtoty/Libftest)
