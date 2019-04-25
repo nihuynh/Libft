@@ -6,12 +6,13 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/04/24 05:01:57 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/04/25 17:27:29 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:=	libft.a
 #NAME 	:=	libftprintf.a
+# VERBOSE	=	1
 RUNMODE	?=  dev
 # directories :
 SRCDIR	:=	srcs
