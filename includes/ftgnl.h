@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/29 16:10:51 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/12/04 13:56:08 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/04/25 17:02:03 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FTGNL_H
 
 # define BUFF_SIZE 512
-# define SAVE node->save
 # define MAX_BS 10000000
 # define MAX_FD 64
 

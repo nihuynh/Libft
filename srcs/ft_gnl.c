@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/29 16:10:22 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/12/04 13:56:08 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/04/25 17:01:34 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,19 @@ inline static int		process_line(t_gnl *node, char **line, char *endlsep)
 {
 	ssize_t	read_byte;
 	size_t	lenendl;
-	size_t	len_save;
+	size_t	len_s;
 	char	*endl;
 
 	read_byte = 1;
-	while (!(endl = ft_strpbrk(SAVE, endlsep)) && read_byte > 0)
-		read_byte = ft_fetchpacket(node->fd, &SAVE);
-	len_save = ft_strlen(SAVE);
-	lenendl = (endl == NULL) ? len_save : endl - SAVE;
-	if (!(*line = ft_strndup(SAVE, lenendl)))
+	while (!(endl = ft_strpbrk(node->save, endlsep)) && read_byte > 0)
+		read_byte = ft_fetchpacket(node->fd, &node->save);
+	len_s = ft_strlen(node->save);
+	lenendl = (endl == NULL) ? len_s : endl - node->save;
+	if (!(*line = ft_strndup(node->save, lenendl)))
 		return (-1);
-	if (!(SAVE = ft_strsubfree(SAVE, lenendl + 1, len_save - lenendl)))
+	if (!(node->save = ft_strsubfree(node->save, lenendl + 1, len_s - lenendl)))
 		return (-1);
-	return (len_save > 0 || lenendl > 0 || read_byte > 0);
+	return (len_s > 0 || lenendl > 0 || read_byte > 0);
 }
 
 /*
