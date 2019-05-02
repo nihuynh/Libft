@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:30:49 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:30:49 by nihuynh          ###   ########.fr       */
+/*   Created: 2018/03/30 10:30:37 by nihuynh           #+#    #+#             */
+/*   Updated: 2019/05/02 21:38:41 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftmath.h"
+#include "ftstring.h"
+#include "ftmem.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+char	*ft_strndup(char const *src, size_t n)
 {
-	if (s1 == NULL || s2 == NULL)
-		return (-1);
-	return (ft_strncmp(s1, s2, n)) ? 0 : 1;
+	char	*res;
+	size_t	size;
+
+	size = ft_min(ft_strlen(src), n);
+	if (!(res = ft_strnew(size)))
+		return (NULL);
+	ft_memcpy(res, src, size);
+	return (res);
 }

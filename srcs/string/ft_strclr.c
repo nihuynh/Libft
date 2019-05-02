@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcasestr.c                                    :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:20:21 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:20:21 by nihuynh          ###   ########.fr       */
+/*   Created: 2018/03/30 10:20:59 by nihuynh           #+#    #+#             */
+/*   Updated: 2019/05/02 21:40:21 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftmem.h"
+#include "ftstring.h"
 
-char	*ft_strcasestr(char const *s, char const *ne)
+void	ft_strclr(char *str)
 {
-	size_t len;
-
-	if (!(len = ft_strlen(ne)))
-		return ((char*)s);
-	while (*s)
-	{
-		if (ft_tolower(*s) == ft_tolower(*ne) && !(ft_strncasecmp(s, ne, len)))
-			return ((char*)s);
-		s++;
-	}
-	return (NULL);
+	if (str)
+		ft_bzero(str, ft_strlen(str));
 }

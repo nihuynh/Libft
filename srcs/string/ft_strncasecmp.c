@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncasecmp.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:20:38 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/04/03 16:19:45 by nihuynh          ###   ########.fr       */
+/*   Created: 2018/03/30 10:23:39 by nihuynh           #+#    #+#             */
+/*   Updated: 2019/05/02 21:42:30 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftconvert.h"
+#include "ftmem.h"
+#include <stddef.h>
 
-char	*ft_strchr(char const *str, int c)
+int	ft_strncasecmp(char const *s1, char const *s2, size_t n)
 {
-	while (*str == (char)c || *str)
-	{
-		if (*str == (char)c)
-			return ((char *)str);
-		str++;
-	}
-	return (NULL);
+	t_byte	*ps1;
+	t_byte	*ps2;
+	int		res;
+
+	ps1 = (t_byte*)s1;
+	ps2 = (t_byte*)s2;
+	res = 0;
+	while (n-- && !res)
+		res = ft_tolower(*ps1++) - ft_tolower(*ps2++);
+	return (res);
 }

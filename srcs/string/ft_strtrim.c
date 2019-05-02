@@ -6,11 +6,12 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:32:18 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/04/03 16:26:20 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/02 21:47:11 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftstring.h"
+#include "ftctype.h"
 
 static size_t	ft_strlentrim(char const *str)
 {

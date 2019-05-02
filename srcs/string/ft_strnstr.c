@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:22:31 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:22:31 by nihuynh          ###   ########.fr       */
+/*   Created: 2018/03/30 10:31:08 by nihuynh           #+#    #+#             */
+/*   Updated: 2019/05/02 21:45:39 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftstring.h"
+#include "ftmem.h"
 
-size_t	ft_strlcpy(char *dst, char const *src, size_t n)
+char	*ft_strnstr(char const *str, char const *to_find, size_t n)
 {
-	size_t	len;
+	size_t len;
 
-	if (src == NULL || dst == NULL)
-		return (0);
-	len = ft_strlen(src);
-	if (n)
+	if (!(len = ft_strlen(to_find)))
+		return ((char*)str);
+	while (*str && n-- >= len)
 	{
-		n = ft_min(len, n - 1);
-		ft_memcpy((void*)dst, (void*)src, n);
-		dst[n] = '\0';
+		if (*str == *to_find && !(ft_memcmp(str, to_find, len)))
+			return ((char*)str);
+		str++;
 	}
-	return (len);
+	return (NULL);
 }

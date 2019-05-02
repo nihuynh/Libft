@@ -6,12 +6,13 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 15:09:45 by modaouch          #+#    #+#             */
-/*   Updated: 2018/12/09 17:56:46 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/02 21:50:44 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_conv.h"
-#include "libft.h"
+#include "ftstring.h"
+#include "ftio.h"
 
 static int		ft_n_precision(const char *format)
 {

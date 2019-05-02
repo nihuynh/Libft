@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:10:23 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/04/30 15:11:03 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/02 21:36:35 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ t_list				*ft_lstat(t_list *alst, unsigned int n);
 t_list				*ft_lstget(t_list *alst, int v, int (*cmp)(void *c, int v));
 void				*ft_lstgetelt(t_list *alst, int (*cmp)(void *c, void *k),
 	void *key);
+void				ft_lstpushnew(t_list **alst, const void *data,
+	size_t content_size);
 
 #endif

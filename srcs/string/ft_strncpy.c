@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:22:49 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/03/30 10:22:49 by nihuynh          ###   ########.fr       */
+/*   Created: 2018/03/30 10:24:06 by nihuynh           #+#    #+#             */
+/*   Updated: 2019/05/02 21:44:16 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftmem.h"
 
-char	*ft_strlowcase(char *str)
+char	*ft_strncpy(char *dst, char const *src, size_t n)
 {
-	char *pstr;
+	char *pdst;
 
-	pstr = str;
-	while (*pstr)
+	pdst = dst;
+	while (*src && n > 0)
 	{
-		*pstr = (char)ft_tolower(*pstr);
-		pstr++;
+		*pdst++ = *src++;
+		n--;
 	}
-	return (str);
+	ft_bzero(pdst, n);
+	return (dst);
 }

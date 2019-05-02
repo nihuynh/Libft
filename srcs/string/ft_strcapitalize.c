@@ -6,11 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:19:57 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/11/26 02:16:21 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/05/02 21:48:37 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftmath.h"
+#include "ftctype.h"
+#include "ftstring.h"
+#include "ftconvert.h"
 
 inline static int	ft_caprule(char c)
 {

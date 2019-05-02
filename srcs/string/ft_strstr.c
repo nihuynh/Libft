@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcasecmp.c                                    :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:20:08 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/09/11 02:12:28 by nihuynh          ###   ########.fr       */
+/*   Created: 2018/03/30 10:31:58 by nihuynh           #+#    #+#             */
+/*   Updated: 2019/05/02 21:46:33 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftstring.h"
+#include "ftmem.h"
 
-int	ft_strcasecmp(char const *s1, char const *s2)
+char	*ft_strstr(char const *str, char const *to_find)
 {
-	t_byte	*ps1;
-	t_byte	*ps2;
-	int		res;
+	size_t len;
 
-	ps1 = (t_byte*)s1;
-	ps2 = (t_byte*)s2;
-	res = 0;
-	while (!res && (*ps1 || *ps2))
-		res = ft_tolower(*ps1++) - ft_tolower(*ps2++);
-	return (res);
+	if (!(len = ft_strlen(to_find)))
+		return ((char*)str);
+	while (*str)
+	{
+		if (*str == *to_find && !(ft_memcmp(str, to_find, len)))
+			return ((char*)str);
+		str++;
+	}
+	return (NULL);
 }
