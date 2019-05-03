@@ -18,6 +18,9 @@ int	ft_fopen_read(char *file_name)
 	int	fd;
 
 	if ((fd = open(file_name, O_RDONLY)) == -1)
+	{
+		ft_printf("Error opening [%s]\n", file_name);
 		ft_error(__func__, __LINE__);
+	}
 	return (fd);
 }
