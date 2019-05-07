@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ftlist.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:10:23 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/06 17:17:24 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/07 21:01:00 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ void				ft_lstpushnew(t_list **alst, const void *data,
 	size_t content_size);
 void				ft_lstiter_arg(int arg, t_list *lst,
 	void (*f)(int arg, t_list *elem));
+t_list				*ft_lstgetelt_2(t_list *alst, int (*cmp)(void *c, void *k),
+	void *key);
 
 #endif
