@@ -50,8 +50,10 @@ target_sources(ft PRIVATE
         srcs/list/ft_lstdelone.c
         srcs/list/ft_lstget.c
         srcs/list/ft_lstgetelt.c
+        srcs/list/ft_lstgetnode.c
         srcs/list/ft_lstiter.c
         srcs/list/ft_lstiteri.c
+        srcs/list/ft_lstiter_arg.c
         srcs/list/ft_lstlast.c
         srcs/list/ft_lstlen.c
         srcs/list/ft_lstmap.c
