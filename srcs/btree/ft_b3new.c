@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_b3new.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 10:15:14 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/16 14:53:07 by nihuynh          ###   ########.fr       */
+/*   Created: 2019/05/16 14:47:41 by nihuynh           #+#    #+#             */
+/*   Updated: 2019/05/16 14:59:40 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftlist.h"
+# include "ftbtree.h"
 # include "ftmem.h"
 # include <stdlib.h>
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+t_btree	*ft_b3new(void *content, size_t content_size)
 {
-	t_list *node;
+	t_btree	*node;
 
-	if (!(node = (t_list*)malloc(sizeof(t_list))))
+	if (!(node = (t_btree*)malloc(sizeof(t_btree))))
 		return (NULL);
 	if (content == NULL)
 	{
@@ -32,6 +32,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		ft_memcpy(node->content, content, content_size);
 		node->content_size = content_size;
 	}
-	node->next = NULL;
+	node->parent = NULL;
+	node->right = NULL;
+	node->left = NULL;
 	return (node);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+         #
+#    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/05/09 17:03:34 by sklepper         ###   ########.fr        #
+#    Updated: 2019/05/16 16:24:03 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,17 +45,19 @@ CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c   \
 CONVERT	:=	ft_atoi.c ft_itoa.c ft_tolower.c ft_toupper.c ft_itoa_base.c	   \
 			ft_atoi_base.c ft_dtoa.c ft_lltoa.c ft_atof.c ft_lltoa_base.c
 PRINTF	:=	ft_printf_conv1.c ft_printf_conv2.c ft_printf_prec1.c ft_printf.c
+BTREE	:=	ft_b3add_left.c	 ft_b3add_right.c ft_b3new.c ft_b3del.c				   \
+			ft_b3apply_prefix.c ft_b3apply_infix.c ft_b3apply_suffix.c
 OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c ft_tabdel.c \
 			ft_swapf.c ft_curr_usec.c ft_line_count.c ft_lstgetelt.c 		   \
 			ft_options.c lifetime.c
 # directories :
 VPATH	:=	./srcs ./srcs/convert ./srcs/ctype ./srcs/io ./srcs/list		   \
-			./srcs/math ./srcs/memory ./srcs/printf ./srcs/string
+			./srcs/math ./srcs/memory ./srcs/printf ./srcs/string ./srcs/btree
 OBJDIR	:=	objs
 INCDIR	:=	includes
 # **************************************************************************** #
 SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) \
-			$(OTHERS) $(PRINTF)
+			$(OTHERS) $(PRINTF) $(BTREE)
 OBJ		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 DEP		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.d))
 INC		:=	-I $(INCDIR)
