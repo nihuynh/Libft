@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 14:47:41 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/16 14:59:40 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/16 18:24:11 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_btree	*ft_b3new(void *content, size_t content_size)
 		ft_memcpy(node->content, content, content_size);
 		node->content_size = content_size;
 	}
-	node->parent = NULL;
 	node->right = NULL;
 	node->left = NULL;
 	return (node);

@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 14:18:28 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/16 16:32:34 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/16 18:23:28 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ struct		s_btree
 {
 	void	*content;
 	size_t	content_size;
-	t_btree	*parent;
 	t_btree	*right;
 	t_btree	*left;
 };
