@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 02:30:46 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/03/18 11:25:40 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/19 01:01:46 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,28 @@ int		lt_detach(t_lt **lt, void *data)
 
 	prev_lt = NULL;
 	if (!(wanted_lt = lt_get(*lt, &prev_lt, data)))
-		return (1);
+		return (EXIT_FAILURE);
 	if (prev_lt != NULL)
 		prev_lt->next = wanted_lt->next;
 	else
 		*lt = wanted_lt->next;
 	ft_memdel((void **)&wanted_lt);
-	return (0);
+	return (EXIT_SUCCESS);
+}
+
+int		lt_detach_all(t_lt **lt)
+{
+	t_lt *next;
+
+	while (lt != NULL)
+	{
+		next = (*lt)->next;
+		ft_memdel((void **)lt);
+		(*lt) = next;
+	}
+	if (lt == NULL)
+		return (EXIT_SUCCESS);
+	return (EXIT_FAILURE);
 }
 
 int		lt_destroy(t_lt **lt)
@@ -77,5 +92,5 @@ int		lt_destroy(t_lt **lt)
 		ft_memdel((void **)lt);
 		*lt = next_lt;
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }
