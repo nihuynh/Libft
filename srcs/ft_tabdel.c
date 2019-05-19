@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 15:16:38 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/12/04 13:56:08 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/05/19 17:41:21 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ void	ft_tabdel(char **greed)
 	if (greed == NULL)
 		return ;
 	while (greed[++i])
+	{
 		free(greed[i]);
+		greed[i] = NULL;
+	}
 	free(greed);
+	greed = NULL;
 }
