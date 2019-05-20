@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_b3new.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 14:47:41 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/16 18:24:11 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/20 13:24:25 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ftbtree.h"
-# include "ftmem.h"
-# include <stdlib.h>
+#include "ftbtree.h"
+#include "ftmem.h"
+#include <stdlib.h>
 
 t_btree	*ft_b3new(void *content, size_t content_size)
 {

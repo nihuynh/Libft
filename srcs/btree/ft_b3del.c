@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_b3del.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 16:20:03 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/16 16:23:28 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/20 13:24:12 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ inline static void
 	del(root);
 }
 
-void	ft_b3del(t_btree **root, void (*del)(t_btree *))
+void
+	ft_b3del(t_btree **root, void (*del)(t_btree *))
 {
 	ft_b3map_suffix(*root, del);
 	root = NULL;
