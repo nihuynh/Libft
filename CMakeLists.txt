@@ -6,6 +6,13 @@ add_library(ft "")
 target_include_directories(ft PUBLIC includes)
 
 target_sources(ft PRIVATE
+        srcs/btree/ft_b3add_left.c
+        srcs/btree/ft_b3add_right.c
+        srcs/btree/ft_b3apply_infix.c
+        srcs/btree/ft_b3apply_prefix.c
+        srcs/btree/ft_b3apply_suffix.c
+        srcs/btree/ft_b3del.c
+        srcs/btree/ft_b3new.c
         srcs/convert/ft_atof.c
         srcs/convert/ft_atoi.c
         srcs/convert/ft_atoi_base.c
@@ -68,6 +75,7 @@ target_sources(ft PRIVATE
         srcs/math/ft_max.c
         srcs/math/ft_maxf.c
         srcs/math/ft_min.c
+        srcs/math/ft_minf.c
         srcs/memory/ft_bzero.c
         srcs/memory/ft_memalloc.c
         srcs/memory/ft_memccpy.c
