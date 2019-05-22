@@ -6,13 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:18:13 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/04/08 17:32:48 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/22 18:56:20 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftio.h"
+#include "option.h"
 
-static inline void	parse(char *str, int *res)
+static inline void	parse_argv_to_int(char *str, int *res)
 {
 	int	is_opt;
 
@@ -21,13 +22,13 @@ static inline void	parse(char *str, int *res)
 	{
 		if (is_opt)
 		{
-			if (*str < 97 || *str > 122)
+			if (*str < 'a' || *str > 'z')
 			{
 				*res |= (1 << 31);
 				return ;
 			}
 			else
-				*res |= (1 << (*str - 97));
+				*res |= (1 << (*str - 'a'));
 		}
 		if (*str == '-')
 			is_opt = 1;
@@ -35,24 +36,29 @@ static inline void	parse(char *str, int *res)
 	}
 }
 
-int					ft_options(int ac, char **av, char *usage)
+t_option	ft_options(int ac, char **av, char *usage)
 {
-	int	res;
+	t_option res;
 
-	res = 0;
+	res.argc = ac;
+	res.argv = av;
+	res.key_found_bitrpz = 0;
 	if (ac == 1)
-		return (0);
+		return (res);
 	while (ac--)
-		parse(av[ac], &res);
-	if (res & (1 << 31))
+		parse_argv_to_int(av[ac], &res.key_found_bitrpz);
+	if (res.key_found_bitrpz & (1 << 31))
 	{
 		ft_putendl("Invalid Option");
-		return (-1);
+		ft_putendl(usage);
+		res.key_found_bitrpz = -1;
+		return (res);
 	}
-	if (res & (1 << 7))
+	if (res.key_found_bitrpz & (1 << 'a' - 'h'))
 	{
 		ft_putendl(usage);
-		return (-1);
+		res.key_found_bitrpz = -1;
+		return (res);
 	}
 	return (res);
 }
