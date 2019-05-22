@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:18:13 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/22 18:56:20 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/05/22 19:01:48 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ t_option	ft_options(int ac, char **av, char *usage)
 		res.key_found_bitrpz = -1;
 		return (res);
 	}
-	if (res.key_found_bitrpz & (1 << 'a' - 'h'))
+	if (res.key_found_bitrpz & (1 << ('h' - 'a')))
 	{
 		ft_putendl(usage);
 		res.key_found_bitrpz = -1;
