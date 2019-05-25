@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:10:31 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/12/08 15:43:43 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/05/24 15:47:59 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ void					ft_memdel(void **ap);
 void					*ft_memrcpy(void *dst, void const *src, size_t n);
 void					*ft_safe_alloc(size_t size);
 void					*ft_print_memory(void *addr, size_t size);
+void					*ft_memdup(void *src, size_t size);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/05/21 05:10:33 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/05/24 15:51:24 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ STRING	:=	ft_str_is_alpha.c ft_str_is_lowercase.c ft_str_is_numeric.c		   \
 			ft_wordcount.c
 MEM		:=	ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c	   \
 			ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_memrcpy.c	   \
-			ft_safe_alloc.c ft_print_memory.c
+			ft_safe_alloc.c ft_print_memory.c ft_memdup.c
 MATH	:=	ft_abs.c ft_absf.c ft_min.c ft_max.c ft_btw.c ft_clamp.c		   \
 			ft_clampf.c ft_maxf.c ft_minf.c
 LIST	:=	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c	   \
