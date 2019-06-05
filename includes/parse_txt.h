@@ -6,14 +6,11 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 17:14:49 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/22 21:27:15 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/06/05 03:42:44 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSE_TXT_H
 # define PARSE_TXT_H
-
-// Your header content
-
 
 #endif

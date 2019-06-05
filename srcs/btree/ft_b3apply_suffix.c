@@ -6,13 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 15:11:47 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/21 01:16:29 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/06/05 03:44:42 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftbtree.h"
 
-void	ft_b3apply_suffix(t_btree *root, void (*applyf)(void *, size_t c_s))
+void
+	ft_b3apply_suffix(t_btree *root, void (*applyf)(void *, size_t c_s))
 {
 	if (root == NULL)
 		return ;
@@ -23,7 +24,8 @@ void	ft_b3apply_suffix(t_btree *root, void (*applyf)(void *, size_t c_s))
 	applyf(root->content, root->content_size);
 }
 
-void	ft_b3apply_suffix_wtarg(int arg, t_btree *root,
+void
+	ft_b3apply_suffix_wtarg(int arg, t_btree *root,
 	void (*applyf)(int arg, void *c, size_t c_s))
 {
 	if (root == NULL)

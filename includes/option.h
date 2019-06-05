@@ -6,14 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 17:13:44 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/22 17:19:40 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/06/05 03:43:13 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OPTION_H
 # define OPTION_H
 
-typedef struct	s_option t_option;
+typedef struct s_option	t_option;
 
 struct			s_option
 {

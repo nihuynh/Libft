@@ -6,14 +6,15 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:18:13 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/22 19:01:48 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/06/05 03:43:26 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftio.h"
 #include "option.h"
 
-static inline void	parse_argv_to_int(char *str, int *res)
+static inline void
+	parse_argv_to_int(char *str, int *res)
 {
 	int	is_opt;
 
@@ -36,7 +37,8 @@ static inline void	parse_argv_to_int(char *str, int *res)
 	}
 }
 
-t_option	ft_options(int ac, char **av, char *usage)
+t_option
+	ft_options(int ac, char **av, char *usage)
 {
 	t_option res;
 
