@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstgetelt.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 16:30:39 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/09 17:02:53 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/06/10 23:23:52 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,21 @@ void
 	{
 		content = alst->content;
 		if (cmp(content, key))
+			return (content);
+		alst = alst->next;
+	}
+	return (NULL);
+}
+
+void
+	*ft_lstgetelt_by_content_ptr(t_list *alst, void *key)
+{
+	void *content;
+
+	while (alst)
+	{
+		content = alst->content;
+		if (content == key)
 			return (content);
 		alst = alst->next;
 	}
