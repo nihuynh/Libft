@@ -6,7 +6,7 @@
 #    By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/06/08 13:55:57 by sklepper         ###   ########.fr        #
+#    Updated: 2019/06/11 15:56:41 by sklepper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ STRING	:=	ft_str_is_alpha.c ft_str_is_lowercase.c ft_str_is_numeric.c		   \
 			ft_strnew.c ft_strnstr.c ft_strcasestr.c ft_strrchr.c 			   \
 			ft_strsplit.c ft_strstr.c ft_strclen.c ft_strsub.c ft_strtrim.c    \
 			ft_strupcase.c ft_strpbrk.c ft_strsubfree.c ft_strjoinfree.c	   \
-			ft_wordcount.c
+			ft_wordcount.c ft_strjoini.c
 MEM		:=	ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c	   \
 			ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_memrcpy.c	   \
 			ft_safe_alloc.c ft_print_memory.c ft_memdup.c

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ftstring.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:09:51 by nihuynh           #+#    #+#             */
-/*   Updated: 2018/12/08 15:43:43 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/06/11 15:52:53 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ char	*ft_strcasestr(char const *str, char const *needle);
 char	*ft_strpbrk(char const *s1, char const *s2);
 char	*ft_strnchr(char const *str, int c, int size);
 size_t	ft_wordcount(char const *str, char c);
+char	*ft_strjoini(const char *s1, int n);
 
 #endif
