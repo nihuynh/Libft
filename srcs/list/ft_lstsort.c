@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 03:25:23 by sklepper          #+#    #+#             */
-/*   Updated: 2019/06/14 05:30:09 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/06/14 06:06:22 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_lstsort(t_list **alst, int (*cmp_res)(void *res1, void *res2))
 	t_list	*lst;
 
 	lst = *alst;
+	if (!lst)
+		return ;
 	while (lst->next)
 	{
 		if (cmp_res(lst->content, lst->next->content) > 0)
