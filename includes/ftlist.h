@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ftlist.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:10:23 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/06/10 23:24:23 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/06/14 05:50:49 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ typedef struct		s_list
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **als, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstaddbk(t_list **alst, t_list *new);
+void				ft_lstadd(t_list **alst, t_list *new_hook);
+void				ft_lstaddbk(t_list **alst, t_list *new_hook);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstiteri(t_list *lst, void (*f)(t_list *elem, int idx));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
@@ -47,5 +47,10 @@ void				*ft_lstgetelt_by_content_ptr(t_list *alst, void *key);
 t_list				*ft_lstgetnode_by_content_ptr(t_list *alst, void *key);
 t_list				*ft_lstpop(t_list *lst, t_list *to_del,
 	void(*f)(void*, size_t));
+void				ft_lstswap(t_list *root, t_list *to_swap1,
+	t_list *to_swap2, t_list *next);
+void				ft_lstswapfirst(t_list **root, t_list *to_swap1,
+	t_list *to_swap2, t_list *next);
+void				ft_lstsort(t_list **alst, int (*cmp)(void*, void*));
 
 #endif
