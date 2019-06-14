@@ -6,11 +6,12 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:18:13 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/06/14 18:31:24 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/06/14 19:07:08 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftio.h"
+#include "ftmem.h"
 #include "ftstring.h"
 #include "option.h"
 
@@ -38,33 +39,36 @@ static inline void
 	}
 }
 
+static inline t_option
+	err_return(t_option res, char *msg, char *usage)
+{
+	ft_putendl(msg);
+	ft_putendl(usage);
+	res.key_found_bitrpz = -1;
+	return (res);
+}
+
 t_option
 	ft_options(int ac, char **av, char *usage)
 {
 	t_option	res;
 	char		*exe_name;
 
+	ft_bzero(&res, sizeof(t_option));
 	res.argc = ac;
 	res.argv = av;
 	res.key_found_bitrpz = 0;
-	exe_name = ft_strrchr(av[0], '/');
-	res.path = ft_strndup(av[0], ft_strlen(av[0]) - ft_strlen(++exe_name));
+	if ((exe_name = ft_strrchr(av[0], '/')))
+		res.path = ft_strndup(av[0], ft_strlen(av[0]) - ft_strlen(++exe_name));
+	else
+		res.path = "./";
 	if (ac == 1)
 		return (res);
 	while (ac--)
 		parse_argv_to_int(av[ac], &res.key_found_bitrpz);
 	if (res.key_found_bitrpz & (1 << 31))
-	{
-		ft_putendl("Invalid Option");
-		ft_putendl(usage);
-		res.key_found_bitrpz = -1;
-		return (res);
-	}
+		return (err_return(res, "Invalid Option", usage));
 	if (res.key_found_bitrpz & (1 << ('h' - 'a')))
-	{
-		ft_putendl(usage);
-		res.key_found_bitrpz = -1;
-		return (res);
-	}
+		return (err_return(res, NULL, usage));
 	return (res);
 }
