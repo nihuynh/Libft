@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:10:23 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/06/14 05:50:49 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/06/16 04:30:58 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ void				ft_lstswap(t_list *root, t_list *to_swap1,
 void				ft_lstswapfirst(t_list **root, t_list *to_swap1,
 	t_list *to_swap2, t_list *next);
 void				ft_lstsort(t_list **alst, int (*cmp)(void*, void*));
+void				ft_lstaddendnew(t_list **alst, const void *data,
+	size_t content_size);
 
 #endif
