@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 17:13:44 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/06/20 19:22:18 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/06/20 19:27:54 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ struct			s_option
 ** 	void		*(*func) (void*);
 ** };
 */
-
 
 t_option	ft_options(int ac, char **av, char *usage);
 
