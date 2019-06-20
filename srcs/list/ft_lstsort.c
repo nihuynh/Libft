@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 03:25:23 by sklepper          #+#    #+#             */
-/*   Updated: 2019/06/14 06:06:22 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/06/20 19:21:10 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	ft_lstsort(t_list **alst, int (*cmp_res)(void *res1, void *res2))
 {
 	t_list	*lst;
 
-	lst = *alst;
-	if (!lst)
+	if (!(lst = *alst))
 		return ;
 	while (lst->next)
 	{
