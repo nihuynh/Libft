@@ -67,9 +67,17 @@ target_sources(ft PRIVATE
         srcs/list/ft_lstnew.c
         srcs/list/ft_lstpushnew.c
         srcs/list/ft_lstrev.c
+        srcs/list/ft_lstpop.c
+        srcs/list/ft_lstmoveup.c
+        srcs/list/ft_lstmovedown.c
+        srcs/list/ft_lstswap.c
+        srcs/list/ft_lstsort.c
+        srcs/list/ft_lstaddendnew.c
+        srcs/list/ft_lstgetidx.c
         srcs/math/ft_abs.c
         srcs/math/ft_absf.c
         srcs/math/ft_btw.c
+        srcs/math/ft_btwf.c
         srcs/math/ft_clamp.c
         srcs/math/ft_clampf.c
         srcs/math/ft_max.c
@@ -138,6 +146,7 @@ target_sources(ft PRIVATE
         srcs/string/ft_strtrim.c
         srcs/string/ft_strupcase.c
         srcs/string/ft_wordcount.c
+        srcs/string/ft_strjoini.c
         srcs/ft_curr_usec.c
         srcs/ft_line_count.c
         srcs/ft_options.c
