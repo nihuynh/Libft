@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    basic_lib.mk                                       :+:      :+:    :+:    #
+#    mk_lib_dep.mk                                      :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/24 00:52:58 by nihuynh           #+#    #+#              #
-#    Updated: 2019/06/14 18:01:22 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/06/23 15:40:21 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@
 INC				+=	$(foreach word,$(LIB_DEP),-I $(dir $(word))includes)
 LIB_LINK		:=	$(foreach word,$(LIB_DEP),-L $(dir $(word)) -l$(patsubst lib%.a,%,$(notdir $(word))))
 LIB_DEP_CLEAN	:=  $(foreach word,$(LIB_DEP),$(patsubst %.a,%,$(word))_clean)
+LIB_BUILT		:=  $(foreach word,$(LIB_DEP),$(patsubst %.a,%,$(word))_built)
 ifndef VERBOSE
 LIBFLAGS 	:=	-j32 RUNMODE=$(RUNMODE)
 else
@@ -28,8 +29,14 @@ endif
 # Libs links :
 $(LIB_DEP):
 	$(MAKE) -C $(dir $@) $(notdir $@) $(LIBFLAGS)
-.PHONY: $(LIB_DEP)
+
+$(LIB_BUILT):
+	$(MAKE) -sC $(dir $@) $(patsubst %_built,%.a,$(notdir $@)) $(LIBFLAGS)
+.PHONY: $(LIB_BUILT)
 
 $(LIB_DEP_CLEAN):
 	$(MAKE) -C  $(dir $@) fclean $(LIBFLAGS)
 .PHONY: $(LIB_DEP_CLEAN)
+
+
+$(patsubst %_built,%.a,$(notdir $@))
