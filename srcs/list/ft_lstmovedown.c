@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmovedown.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 02:13:14 by sklepper          #+#    #+#             */
-/*   Updated: 2019/06/19 00:01:58 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/06/23 22:50:48 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_lstmovedown(t_list **alst, t_list *to_move)
 	next = NULL;
 	len = ft_lstlen(lst);
 	idx = ft_lstgetidx(lst, to_move);
+	if (idx == -1)
+		return ;
 	if (idx == 0 && lst->next)
 		ft_lstswapfirst(alst, lst, lst->next, lst->next->next);
 	else if (idx < len - 1)

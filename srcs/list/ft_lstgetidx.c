@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstgetidx.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 01:56:00 by sklepper          #+#    #+#             */
-/*   Updated: 2019/06/18 02:03:43 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/06/23 22:48:59 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int		ft_lstgetidx(t_list *lst, t_list *to_get)
 		n++;
 	}
 	if (lst != to_get)
-		ft_error(__func__, __LINE__);
+		return (-1);
 	return (n);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmoveup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 01:49:01 by sklepper          #+#    #+#             */
-/*   Updated: 2019/06/18 02:13:41 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/06/23 22:50:33 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_lstmoveup(t_list **alst, t_list *to_move)
 	lst = *alst;
 	next = NULL;
 	idx = ft_lstgetidx(lst, to_move);
+	if (idx == -1)
+		return ;
 	if (idx == 0)
 		return ;
 	else if (idx == 1)
