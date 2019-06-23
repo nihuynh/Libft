@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/06/19 01:15:28 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/06/23 14:36:35 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,33 +52,14 @@ BTREE	:=	ft_b3add_left.c	 ft_b3add_right.c ft_b3new.c ft_b3del.c			   \
 OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c ft_tabdel.c \
 			ft_swapf.c ft_curr_usec.c ft_line_count.c ft_lstgetelt.c 		   \
 			ft_options.c lifetime.c
+SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) 		   \
+			$(OTHERS) $(PRINTF) $(BTREE)
 # directories :
 VPATH	:=	./srcs ./srcs/convert ./srcs/ctype ./srcs/io ./srcs/list		   \
 			./srcs/math ./srcs/memory ./srcs/printf ./srcs/string ./srcs/btree
-OBJDIR	:=	objs
-INCDIR	:=	includes
 # **************************************************************************** #
-SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) \
-			$(OTHERS) $(PRINTF) $(BTREE)
-OBJ		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
-DEP		:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.d))
-INC		:=	-I $(INCDIR)
-# **************************************************************************** #
-# specs :
-CC		:=	clang
-CFLAGS	:=	-Werror -Wall -Wextra
-CFLAGS	+=	-Wstrict-aliasing -pedantic -Wunreachable-code
-ifeq ($(RUNMODE),dev)
-    CFLAGS	+=	-g3 -O0
-	# CFLAGS	+=	-Wpedantic -ggdb -fsanitize=address
-else
-	CFLAGS	+= -Os -march=native -flto -g0
-endif
-ifndef VERBOSE
-.SILENT:
-endif
-RM		:=	/bin/rm -f
-.SUFFIXES:
+# Makefile dependency :
+include mk_c_project.mk
 # **************************************************************************** #
 ASCIIART:=	"\033[1;36m\033[19G_ _                       _       _ _ _      __ \
 _\033[0m\n\033[1;36m\033[18G(_) |                     | |     | (_) |    / _| |\
@@ -88,48 +69,33 @@ _\033[0m\n\033[1;36m\033[18G(_) |                     | |     | (_) |    / _| |\
 | | | | | | |_) | | | |_\033[0m\n\033[1;34m\033[12G|_| |_|_|_| |_|\\__,_|\\__, \
 |_| |_|_| |_| |_|_|_.__/|_|  \\__|\033[0m\n\033[1;36m\033[33G __/ |\033[0m\n\
 \033[1;36m\033[33G|___/\033[0m\n"
-OKLOGO		:=	\033[80G\033[32m[OK]\033[0m\n
-GREP_ERR	:=	grep 'Error\|Warning' -C1 2> /dev/null || true
 # **************************************************************************** #
 # Rules :
 all: $(NAME)
 .PHONY: all
+
 $(NAME): $(OBJ)
 	ar rc $@ $(OBJ) && ranlib $@
 	@printf "\n\033[1;34m$@\033[25G\033[32mBuilt $@ $(OKLOGO)"
 	@printf $(ASCIIART)
 -include $(DEP)
-$(OBJDIR)/%.o: %.c
-	mkdir $(OBJDIR) 2> /dev/null || true
-	$(CC) $(CFLAGS) -MMD -MP -c -o $@ $< $(INC)
-	@printf "\033[1;34m$(NAME)\033[25G\033[33mCompile $< $(OKLOGO)"
 
-clean:
-	$(RM) $(OBJ)
-	$(RM) $(DEP)
-	$(RM) UT_printf.out UT_lib.out
-	rmdir $(OBJDIR) 2> /dev/null || true
-	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning objs $(OKLOGO)"
-.PHONY: clean
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) UT_printf.out UT_lib.out
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
 .PHONY: fclean
-git: clean
-	git add -A
-	@printf "\033[1;34m$(NAME)\033[25G\033[31mGit sync $(OKLOGO)"
-	git status
-.PHONY: git
-re: fclean all
-.PHONY: re
+
 run: all
 	$(CC) $(CFLAGS) main.c -o UT_lib.out $(INC) $(NAME)
 	./UT_lib.out "Les doritos sont merveilleux"
 .PHONY: run
+
 runprintf: all
 	$(CC) $(CFLAGS) -o UT_printf.out printf_main.c -I includes libft.a
 	./UT_printf.out
 .PHONY: runprintf
+
 norme:
 	norminette srcs includes | $(GREP_ERR)
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
