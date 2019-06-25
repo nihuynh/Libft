@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:18:13 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/06/14 19:07:08 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/06/25 20:40:01 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "option.h"
 
 static inline void
-	parse_argv_to_int(char *str, int *res)
+	parse_argv_to_int(char *str, int *res, int *count_opt)
 {
 	int	is_opt;
 
@@ -34,7 +34,10 @@ static inline void
 				*res |= (1 << (*str - 'a'));
 		}
 		if (*str == '-')
+		{
 			is_opt = 1;
+			*count_opt += 1;
+		}
 		str++;
 	}
 }
@@ -44,8 +47,19 @@ static inline t_option
 {
 	ft_putendl(msg);
 	ft_putendl(usage);
-	res.key_found_bitrpz = -1;
 	return (res);
+}
+
+static inline bool
+	test(t_option option, char key)
+{
+	return (!(!(option.key_found_bitrpz & (1UL << (key - 'a')))));
+}
+
+static inline void
+	reset(t_option *option, char key)
+{
+	option->key_found_bitrpz &= ~(1UL << (key - 'a'));
 }
 
 t_option
@@ -57,15 +71,16 @@ t_option
 	ft_bzero(&res, sizeof(t_option));
 	res.argc = ac;
 	res.argv = av;
-	res.key_found_bitrpz = 0;
+	res.test_ = &test;
+	res.reset_ = &reset;
 	if ((exe_name = ft_strrchr(av[0], '/')))
 		res.path = ft_strndup(av[0], ft_strlen(av[0]) - ft_strlen(++exe_name));
 	else
 		res.path = "./";
 	if (ac == 1)
 		return (res);
-	while (ac--)
-		parse_argv_to_int(av[ac], &res.key_found_bitrpz);
+	while (ac-- > 1)
+		parse_argv_to_int(av[ac], &res.key_found_bitrpz, &res.count_opt);
 	if (res.key_found_bitrpz & (1 << 31))
 		return (err_return(res, "Invalid Option", usage));
 	if (res.key_found_bitrpz & (1 << ('h' - 'a')))

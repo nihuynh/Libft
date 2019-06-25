@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 23:30:21 by nihuynh           #+#    #+#              #
-#    Updated: 2019/06/23 14:36:48 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/06/25 16:04:48 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ endif
 ifeq ($(RUNMODE),dev)
     CFLAGS	+=	-g3 -O0
     # CFLAGS	+=	-fsanitize=thread
-	CFLAGS	+=	-fsanitize=address -fsanitize-recover=address
+	# CFLAGS	+=	-fsanitize=address
+	CFLAGS	+=	-fsanitize-recover=address
 else
 	CFLAGS	+= -Os -march=native -flto -g0
 endif

@@ -6,12 +6,14 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 17:13:44 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/06/20 19:50:16 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/06/25 17:55:23 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OPTION_H
 # define OPTION_H
+
+# include <stdbool.h>
 
 typedef struct s_option	t_option;
 
@@ -20,9 +22,11 @@ struct			s_option
 	int			argc;
 	char		**argv;
 	char		*path;
+	int			count_opt;
 	int			key_found_bitrpz;
 	void		*link_prg;
-
+	bool		(*test_)	(t_option, char key);
+	void		(*reset_)	(t_option*, char key);
 };
 
 /*
