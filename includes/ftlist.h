@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ftlist.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 01:10:23 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/06/18 02:17:08 by sklepper         ###   ########.fr       */
+/*   Updated: 2019/07/02 22:37:00 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new_hook);
 void				ft_lstaddbk(t_list **alst, t_list *new_hook);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void				ft_lstapply(t_list *lst, void (*f)(void *content));
 void				ft_lstiteri(t_list *lst, void (*f)(t_list *elem, int idx));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t				ft_lstlen(t_list const *lst);

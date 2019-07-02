@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 23:30:21 by nihuynh           #+#    #+#              #
-#    Updated: 2019/06/25 16:04:48 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/07/02 22:51:09 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ DEP			:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.d))
 INC			:=	-I includes
 # **************************************************************************** #
 OKLOGO		:=	\033[80G\033[32m[OK]\033[0m\n
-GREP_ERR	:=	grep 'Error\|Warning' -C1 2> /dev/null || true
+GREP_ERR	:=	grep 'Error\|Warning' -C1 | grep -v "comment not well formatted" 2> /dev/null || true
 PHELP		:=	"\033[36m%-26s\033[0m %s\n"
 RM			:=	/bin/rm -f
 .SUFFIXES:

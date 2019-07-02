@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/06/23 14:36:35 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/07/02 22:37:24 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ LIST	:=	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c	   \
 			ft_lstat.c ft_lstget.c ft_lstiteri.c ft_lstpushnew.c			   \
 			ft_lstiter_arg.c ft_lstgetnode.c ft_lstpop.c ft_lstsort.c		   \
 			ft_lstswap.c ft_lstaddendnew.c ft_lstmoveup.c ft_lstgetidx.c	   \
-			ft_lstmovedown.c
+			ft_lstmovedown.c ft_lstapply.c
 CTYPE	:=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c   \
 			ft_isdigit.c ft_isgraph.c ft_islower.c ft_isprint.c ft_isspace.c   \
 			ft_isupper.c ft_isxdigit.c ft_isnumber.c
