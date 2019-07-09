@@ -74,6 +74,7 @@ target_sources(ft PRIVATE
         srcs/list/ft_lstsort.c
         srcs/list/ft_lstaddendnew.c
         srcs/list/ft_lstgetidx.c
+        srcs/list/ft_lstapply.c
         srcs/math/ft_abs.c
         srcs/math/ft_absf.c
         srcs/math/ft_btw.c
