@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:18:13 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/06/25 20:40:01 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/07/07 03:22:00 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ static inline void
 		{
 			if (*str < 'a' || *str > 'z')
 			{
-				*res |= (1 << 31);
+				*res |= (1UL << 31);
 				return ;
 			}
 			else
-				*res |= (1 << (*str - 'a'));
+				*res |= (1UL << (*str - 'a'));
 		}
 		if (*str == '-')
 		{
@@ -81,9 +81,9 @@ t_option
 		return (res);
 	while (ac-- > 1)
 		parse_argv_to_int(av[ac], &res.key_found_bitrpz, &res.count_opt);
-	if (res.key_found_bitrpz & (1 << 31))
+	if (res.key_found_bitrpz & (1UL << 31))
 		return (err_return(res, "Invalid Option", usage));
-	if (res.key_found_bitrpz & (1 << ('h' - 'a')))
+	if (res.key_found_bitrpz & (1UL << ('h' - 'a')))
 		return (err_return(res, NULL, usage));
 	return (res);
 }

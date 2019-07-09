@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:24:06 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/05/02 21:44:16 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/07/09 11:47:03 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ char	*ft_strncpy(char *dst, char const *src, size_t n)
 	char *pdst;
 
 	pdst = dst;
-	while (*src && n > 0)
+	while (n > 0 && *src)
 	{
 		*pdst++ = *src++;
 		n--;
 	}
-	ft_bzero(pdst, n);
+	if (n > 0)
+		ft_bzero(pdst, n);
 	return (dst);
 }
