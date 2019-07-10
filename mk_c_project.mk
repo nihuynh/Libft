@@ -6,19 +6,18 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 23:30:21 by nihuynh           #+#    #+#              #
-#    Updated: 2019/07/11 01:49:42 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/07/11 01:56:23 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 OBJDIR 		:=	objs
 INCDIR  	:=	includes
-
 OBJ			:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 DEP			:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.d))
 INC			:=	-I includes
 # **************************************************************************** #
 OKLOGO		:=	\033[80G\033[32m[OK]\033[0m\n
-GREP_ERR	:=	grep 'Error\|Warning' -C1 | grep -v "comment not well formatted" 2> /dev/null || true
+GREP_ERR	:=	grep 'Error\|Warning' -C1 2> /dev/null || true
 PHELP		:=	"\033[36m%-26s\033[0m %s\n"
 RM			:=	/bin/rm -f
 .SUFFIXES:
@@ -40,13 +39,13 @@ ifeq ($(RUNMODE),dev)
 else
     DEV_CFLAGS	:= -O3 -march=native -flto -g0
 endif
-$(info "Using ${DEV_CFLAGS}")
 CFLAGS		+= $(DEV_CFLAGS)
+# **************************************************************************** #
 $(OBJDIR)/%.o: %.c
 	mkdir $(OBJDIR) 2> /dev/null || true
 	$(CC) $(CFLAGS) -MMD -MP -c -o $@ $< $(INC)
 	@printf "\033[1;34m$(NAME)\033[25G\033[33mCompile $< $(OKLOGO)"
-# **************************************************************************** #
+
 usage: ## Print out on how to use this Makefile.
 	@printf "\n$(NAME)\n  Usage:\n\tmake <target>\n\n  Targets:\n"
 	@fgrep -h " ## " $(MAKEFILE_LIST) \
