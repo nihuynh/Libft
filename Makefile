@@ -6,14 +6,13 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/07/02 22:37:24 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/07/11 01:34:15 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:=	libft.a
 #NAME 	:=	libftprintf.a
-# VERBOSE	=	1
-RUNMODE	?=  dev
+RUNMODE	?=  release
 # Sources files :
 IO		:=	ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c			   \
 			ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c			   \
@@ -54,9 +53,11 @@ OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c ft_tabdel.c \
 			ft_options.c lifetime.c
 SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) 		   \
 			$(OTHERS) $(PRINTF) $(BTREE)
+TESTS	:=	ut_bzero.c ut_atof.c ut_btree.c ut_gnl.c ut_lifetime.c ut_printf.c
 # directories :
 VPATH	:=	./srcs ./srcs/convert ./srcs/ctype ./srcs/io ./srcs/list		   \
-			./srcs/math ./srcs/memory ./srcs/printf ./srcs/string ./srcs/btree
+			./srcs/math ./srcs/memory ./srcs/printf ./srcs/string ./srcs/btree \
+			./tests
 # **************************************************************************** #
 # Makefile dependency :
 include mk_c_project.mk
@@ -71,6 +72,7 @@ _\033[0m\n\033[1;36m\033[18G(_) |                     | |     | (_) |    / _| |\
 \033[1;36m\033[33G|___/\033[0m\n"
 # **************************************************************************** #
 # Rules :
+.DEFAULT_GOAL := all
 all: $(NAME)
 .PHONY: all
 
@@ -95,6 +97,11 @@ runprintf: all
 	$(CC) $(CFLAGS) -o UT_printf.out printf_main.c -I includes libft.a
 	./UT_printf.out
 .PHONY: runprintf
+
+test: all
+	$(CC) $(CFLAGS) -o UT_bzero.out tests/ut_bzero.c -I includes libft.a
+	./UT_bzero.out
+.PHONY: test
 
 norme:
 	norminette srcs includes | $(GREP_ERR)

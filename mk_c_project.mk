@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 23:30:21 by nihuynh           #+#    #+#              #
-#    Updated: 2019/07/07 03:16:11 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/07/11 01:49:42 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,22 +25,23 @@ RM			:=	/bin/rm -f
 # **************************************************************************** #
 # Compile custom :
 CC			:=	clang
-CFLAGS		:=	-Werror -Wall -Wextra
-CFLAGS		+=	-Wstrict-aliasing -pedantic -Wunreachable-code
+CFLAGS		:=	-Werror -Wall -Wextra -Wstrict-aliasing -pedantic -Wunreachable-code
+
 ifndef VERBOSE
 .SILENT:
 endif
 .SUFFIXES:
 ifeq ($(RUNMODE),dev)
-    CFLAGS	+=	-g3 -O0
-    # CFLAGS	+=	-fsanitize=thread
-	CFLAGS	+=	-fsanitize=address
-	# CFLAGS	+=	-fstack-protector
-	CFLAGS	+=	-fsanitize=undefined
-	# CFLAGS	+=	-fsanitize-recover=address
+    DEV_CFLAGS	:=	-g3 -O0
+    # DEV_CFLAGS	+=	-fsanitize=thread
+    DEV_CFLAGS	+=	-fsanitize=address -fsanitize-recover=address
+    # DEV_CFLAGS	+=	-fstack-protector
+    DEV_CFLAGS	+=	-fsanitize=undefined
 else
-	CFLAGS	+= -O3 -march=native -flto -g0
+    DEV_CFLAGS	:= -O3 -march=native -flto -g0
 endif
+$(info "Using ${DEV_CFLAGS}")
+CFLAGS		+= $(DEV_CFLAGS)
 $(OBJDIR)/%.o: %.c
 	mkdir $(OBJDIR) 2> /dev/null || true
 	$(CC) $(CFLAGS) -MMD -MP -c -o $@ $< $(INC)
