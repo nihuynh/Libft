@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/07/11 01:34:15 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/07/11 02:07:48 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ OTHERS	:=	ft_gnl.c ft_tablen.c ft_putctab.c ft_error.c ft_swap.c ft_tabdel.c \
 SRC		:=	$(IO) $(STRING) $(MEM) $(MATH) $(LIST) $(CTYPE) $(CONVERT) 		   \
 			$(OTHERS) $(PRINTF) $(BTREE)
 TESTS	:=	ut_bzero.c ut_atof.c ut_btree.c ut_gnl.c ut_lifetime.c ut_printf.c
+UT_OUT	:=	$(TESTS:.c=.out)
 # directories :
 VPATH	:=	./srcs ./srcs/convert ./srcs/ctype ./srcs/io ./srcs/list		   \
 			./srcs/math ./srcs/memory ./srcs/printf ./srcs/string ./srcs/btree \
@@ -84,23 +85,20 @@ $(NAME): $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) UT_printf.out UT_lib.out
+	$(RM) $(UT_OUT)
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
 .PHONY: fclean
 
-run: all
-	$(CC) $(CFLAGS) main.c -o UT_lib.out $(INC) $(NAME)
-	./UT_lib.out "Les doritos sont merveilleux"
-.PHONY: run
+%.out: %.c
+	$(CC) $(CFLAGS) -o $@ $< $(INC) -I includes libft.a
 
-runprintf: all
-	$(CC) $(CFLAGS) -o UT_printf.out printf_main.c -I includes libft.a
-	./UT_printf.out
-.PHONY: runprintf
-
-test: all
-	$(CC) $(CFLAGS) -o UT_bzero.out tests/ut_bzero.c -I includes libft.a
-	./UT_bzero.out
+test: $(UT_OUT)
+	# ./ut_printf.out
+	# ./ut_atof.out
+	# ./ut_btree.out
+	# ./ut_lifetime.out
+	# ./ut_gnl.out
+	./ut_bzero.out
 .PHONY: test
 
 norme:

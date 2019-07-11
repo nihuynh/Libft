@@ -19,7 +19,7 @@ void	read_file(char *filename)
 	if (GNL_LAST_ALLOC)
 		ft_strdel(&line);
 	ft_printf("Adress = %p Line = %s\n", line, line);
-	if (0 && line != NULL)
+	if ((0) && line != NULL)
 		ft_printf("Error.");
 	close(fd);
 }
