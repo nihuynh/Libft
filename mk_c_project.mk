@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 23:30:21 by nihuynh           #+#    #+#              #
-#    Updated: 2019/07/11 01:56:23 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/07/11 19:41:13 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJ			:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 DEP			:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.d))
 INC			:=	-I includes
 # **************************************************************************** #
-OKLOGO		:=	\033[80G\033[32m[OK]\033[0m\n
+OKLOGO		:=	\033[78G\033[32m[Done]\033[0m\n
 GREP_ERR	:=	grep 'Error\|Warning' -C1 2> /dev/null || true
 PHELP		:=	"\033[36m%-26s\033[0m %s\n"
 RM			:=	/bin/rm -f
@@ -27,17 +27,17 @@ CC			:=	clang
 CFLAGS		:=	-Werror -Wall -Wextra -Wstrict-aliasing -pedantic -Wunreachable-code
 
 ifndef VERBOSE
-.SILENT:
+    .SILENT:
 endif
 .SUFFIXES:
 ifeq ($(RUNMODE),dev)
-    DEV_CFLAGS	:=	-g3 -O0
-    # DEV_CFLAGS	+=	-fsanitize=thread
-    DEV_CFLAGS	+=	-fsanitize=address -fsanitize-recover=address
-    # DEV_CFLAGS	+=	-fstack-protector
-    DEV_CFLAGS	+=	-fsanitize=undefined
+DEV_CFLAGS	:=	-g3 -O0
+# DEV_CFLAGS	+=	-fsanitize=thread
+DEV_CFLAGS	+=	-fsanitize=address -fsanitize-recover=address
+# DEV_CFLAGS	+=	-fstack-protector
+DEV_CFLAGS	+=	-fsanitize=undefined
 else
-    DEV_CFLAGS	:= -O3 -march=native -flto -g0
+DEV_CFLAGS	:= -O3 -march=native -flto -g0
 endif
 CFLAGS		+= $(DEV_CFLAGS)
 # **************************************************************************** #

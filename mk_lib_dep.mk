@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/24 00:52:58 by nihuynh           #+#    #+#              #
-#    Updated: 2019/06/23 15:40:21 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/07/11 15:41:37 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(LIB_DEP):
 	$(MAKE) -C $(dir $@) $(notdir $@) $(LIBFLAGS)
 
 $(LIB_BUILT):
-	$(MAKE) -sC $(dir $@) $(patsubst %_built,%.a,$(notdir $@)) $(LIBFLAGS)
+	$(MAKE) -C $(dir $@) $(patsubst %_built,%.a,$(notdir $@)) $(LIBFLAGS)
 .PHONY: $(LIB_BUILT)
 
 $(LIB_DEP_CLEAN):
