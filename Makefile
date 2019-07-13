@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/07/11 02:07:48 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/07/13 20:48:58 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,10 +89,10 @@ fclean: clean
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
 .PHONY: fclean
 
-%.out: %.c
+%.out: %.c $(NAME)
 	$(CC) $(CFLAGS) -o $@ $< $(INC) -I includes libft.a
 
-test: $(UT_OUT)
+test:  $(UT_OUT)
 	# ./ut_printf.out
 	# ./ut_atof.out
 	# ./ut_btree.out

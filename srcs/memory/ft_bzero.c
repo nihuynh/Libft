@@ -6,28 +6,30 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 08:09:40 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/07/11 01:11:31 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/07/13 20:46:53 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftmem.h"
+#include <stdio.h>
+#include <stdint.h>
 
 static inline t_byte
 	*ft_bzero_long(void *str, size_t n)
 {
-	long	*pstr;
-	long	val;
-	size_t	n_long;
+	unsigned long	*pstr;
+	unsigned long	val;
+	size_t			n_long;
 
-	n_long = n >> 3;
-	pstr = (long*)str;
-	val = 0;
-	while (n_long % 4)
+	n_long = n >> 3UL;
+	pstr = (unsigned long*)str;
+	val = 0UL;
+	while (n_long & 0x3UL)
 	{
 		*pstr++ = val;
 		n_long--;
 	}
-	n_long >>= 2;
+	n_long >>= 2UL;
 	while (n_long--)
 	{
 		pstr[0] = val;
@@ -45,21 +47,15 @@ void
 	t_byte			*pstr;
 	register t_byte	val;
 
-	pstr = ft_bzero_long(str, n);
-	n = n % 8;
 	val = 0;
-	while (n % 4)
+	pstr = (t_byte*)str;
+	if (n >= 8)
 	{
+		while ((uintptr_t)pstr & 0x7UL && n--)
+			*pstr++ = val;
+		pstr = ft_bzero_long(pstr, n);
+	}
+	n = n & 0x7UL;
+	while (n-- > 0)
 		*pstr++ = val;
-		n--;
-	}
-	n >>= 2;
-	while (n--)
-	{
-		pstr[0] = val;
-		pstr[1] = val;
-		pstr[2] = val;
-		pstr[3] = val;
-		pstr = &pstr[4];
-	}
 }

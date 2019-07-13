@@ -115,7 +115,7 @@ void	test_speed(void *ptr, size_t len, void (*func) (void *, size_t))
 
 int		main(void)
 {
-	char	data[64];
+	char	data[1024];
 
 	test_result();
 	test_speed(&data, sizeof(data), &ft_bzero);
