@@ -86,12 +86,29 @@ static void test5() {
     }
 }
 
+static void test6() {
+    // Assign
+    char t1[] = "Hello, world!Hello, world!";
+    char r1[] = "Hello, world!Hello, world!";
+
+    // Act
+    ft_bzero(t1, 27);
+    bzero(r1, 27);
+
+    // Assert
+    if (memcmp(t1, r1, 27)) {
+        fail = 1;
+        fprintf(stderr, "FAIL: ft_bzero test 6\n");
+    }
+}
+
 int test_result() {
     test1();
     test2();
     test3();
     test4();
     test5();
+    test6();
 
     if (!fail)
         printf("PASS: ft_bzero\n");
