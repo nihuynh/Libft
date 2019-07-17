@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 23:30:21 by nihuynh           #+#    #+#              #
-#    Updated: 2019/07/11 19:41:13 by nihuynh          ###   ########.fr        #
+#    Updated: 2019/07/17 20:56:14 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ RM			:=	/bin/rm -f
 # Compile custom :
 CC			:=	clang
 CFLAGS		:=	-Werror -Wall -Wextra -Wstrict-aliasing -pedantic -Wunreachable-code
-
 ifndef VERBOSE
     .SILENT:
 endif
@@ -41,8 +40,10 @@ DEV_CFLAGS	:= -O3 -march=native -flto -g0
 endif
 CFLAGS		+= $(DEV_CFLAGS)
 # **************************************************************************** #
-$(OBJDIR)/%.o: %.c
-	mkdir $(OBJDIR) 2> /dev/null || true
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+$(OBJDIR)/%.o: %.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -MMD -MP -c -o $@ $< $(INC)
 	@printf "\033[1;34m$(NAME)\033[25G\033[33mCompile $< $(OKLOGO)"
 
