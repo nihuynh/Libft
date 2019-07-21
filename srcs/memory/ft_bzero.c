@@ -6,12 +6,11 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 08:09:40 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/07/13 20:46:53 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/07/21 19:24:34 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftmem.h"
-#include <stdio.h>
 #include <stdint.h>
 
 static inline t_byte
