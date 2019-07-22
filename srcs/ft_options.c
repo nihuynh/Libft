@@ -6,7 +6,7 @@
 /*   By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:18:13 by nihuynh           #+#    #+#             */
-/*   Updated: 2019/07/07 03:22:00 by nihuynh          ###   ########.fr       */
+/*   Updated: 2019/07/22 14:42:48 by nihuynh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@ static inline void
 {
 	int	is_opt;
 
-	is_opt = 0;
+	if (*str && *str == '-')
+	{
+		is_opt = 1;
+		*count_opt += 1;
+		str++;
+	} else
+		is_opt = 0;
 	while (*str)
 	{
 		if (is_opt)
@@ -32,11 +38,6 @@ static inline void
 			}
 			else
 				*res |= (1UL << (*str - 'a'));
-		}
-		if (*str == '-')
-		{
-			is_opt = 1;
-			*count_opt += 1;
 		}
 		str++;
 	}
