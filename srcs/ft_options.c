@@ -25,7 +25,8 @@ static inline void
 		is_opt = 1;
 		*count_opt += 1;
 		str++;
-	} else
+	}
+	else
 		is_opt = 0;
 	while (*str)
 	{
