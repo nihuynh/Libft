@@ -13,7 +13,7 @@
 #include "ftio.h"
 #include <string.h>
 #include <stdlib.h>
-#include <sys/errno.h>
+#include <errno.h>
 
 /*
 ** @ft_error
