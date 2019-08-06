@@ -16,11 +16,9 @@
 void	ft_lstmoveup(t_list **alst, t_list *to_move)
 {
 	t_list	*lst;
-	t_list	*next;
 	int		idx;
 
 	lst = *alst;
-	next = NULL;
 	idx = ft_lstgetidx(lst, to_move);
 	if (idx == -1)
 		return ;

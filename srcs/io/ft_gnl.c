@@ -51,7 +51,7 @@ inline static int		process_line(t_gnl *node, char **line, char *endlsep)
 	while (!(endl = ft_strpbrk(node->save, endlsep)) && read_byte > 0)
 		read_byte = ft_fetchpacket(node->fd, &node->save);
 	len_s = ft_strlen(node->save);
-	lenendl = (endl == NULL) ? len_s : endl - node->save;
+	lenendl = (endl == NULL) ? len_s : (size_t)(endl - node->save);
 	if (!(*line = ft_strndup(node->save, lenendl)))
 		return (-1);
 	if (!(node->save = ft_strsubfree(node->save, lenendl + 1, len_s - lenendl)))

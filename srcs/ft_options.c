@@ -78,7 +78,7 @@ t_option
 	if ((exe_name = ft_strrchr(av[0], '/')))
 		res.path = ft_strndup(av[0], ft_strlen(av[0]) - ft_strlen(++exe_name));
 	else
-		res.path = "./";
+		res.path = ft_strdup("./");
 	if (ac == 1)
 		return (res);
 	while (ac-- > 1)

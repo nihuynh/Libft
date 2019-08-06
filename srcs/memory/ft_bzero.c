@@ -16,12 +16,12 @@
 static inline t_byte
 	*ft_bzero_long(void *str, size_t n)
 {
-	unsigned long	*pstr;
-	unsigned long	val;
-	size_t			n_long;
+	uint64_t	*pstr;
+	uint64_t	val;
+	size_t		n_long;
 
 	n_long = n >> 3UL;
-	pstr = (unsigned long*)str;
+	pstr = str;
 	val = 0UL;
 	while (n_long & 0x3UL)
 	{

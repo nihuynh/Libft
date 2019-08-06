@@ -16,12 +16,10 @@
 void	ft_lstmovedown(t_list **alst, t_list *to_move)
 {
 	t_list	*lst;
-	t_list	*next;
 	int		idx;
 	int		len;
 
 	lst = *alst;
-	next = NULL;
 	len = ft_lstlen(lst);
 	idx = ft_lstgetidx(lst, to_move);
 	if (idx == -1)
