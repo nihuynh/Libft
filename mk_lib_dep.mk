@@ -17,7 +17,7 @@
 # LIB_DEP_CLEAN is the target to clean the libs.
 
 INC				+=	$(foreach word,$(LIB_DEP),-I $(dir $(word))includes)
-LIB_LINK		:=	$(foreach word,$(LIB_DEP),-L $(dir $(word)) -l$(patsubst lib%.a,%,$(notdir $(word))))
+LIB_LINK		:=	$(foreach word,$(LIB_DEP),-L $(patsubst %/,%,$(dir $(word))) -l$(patsubst lib%.a,%,$(notdir $(word))))
 LIB_DEP_CLEAN	:=  $(foreach word,$(LIB_DEP),$(patsubst %.a,%,$(word))_clean)
 LIB_BUILT		:=  $(foreach word,$(LIB_DEP),$(patsubst %.a,%,$(word))_built)
 ifndef VERBOSE
