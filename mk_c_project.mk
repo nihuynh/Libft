@@ -6,12 +6,12 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 23:30:21 by nihuynh           #+#    #+#              #
-#    Updated: 2019/07/17 20:56:14 by nihuynh          ###   ########.fr        #
+#    Updated: 2020/07/23 18:20:35 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-OBJDIR 		:=	objs
-INCDIR  	:=	includes
+OBJDIR		:=	objs
+INCDIR		:=	includes
 OBJ			:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 DEP			:=	$(addprefix $(OBJDIR)/, $(SRC:.c=.d))
 INC			:=	-I includes
@@ -26,7 +26,7 @@ RM			:=	/bin/rm -f
 CC			:=	clang
 CFLAGS		:=	-Werror -Wall -Wextra -Wstrict-aliasing -pedantic -Wunreachable-code
 ifndef VERBOSE
-    .SILENT:
+.SILENT:
 endif
 .SUFFIXES:
 ifeq ($(RUNMODE),dev)
@@ -51,12 +51,9 @@ usage: ## Print out on how to use this Makefile.
 	@printf "\n$(NAME)\n  Usage:\n\tmake <target>\n\n  Targets:\n"
 	@fgrep -h " ## " $(MAKEFILE_LIST) \
 	| fgrep -v fgrep | awk 'BEGIN {FS = ":.*?## "}; {printf $(PHELP), $$1, $$2}'
-	@printf "\n  Scenes:\n"
-	@for file in `LS scenes | grep .rt | sort -u | cut -d . -f 1`; \
-		do printf "make run $$file \n"; done
 .PHONY: usage
 
-clean:  ## Clean of the project directory (.o & .d).
+clean: ## Clean of the project directory (.o & .d).
 	$(RM) $(OBJ)
 	$(RM) $(DEP)
 	$(RM) -r $(OBJDIR)

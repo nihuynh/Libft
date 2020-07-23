@@ -6,13 +6,13 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/30 10:35:40 by nihuynh           #+#    #+#              #
-#    Updated: 2019/07/13 20:48:58 by nihuynh          ###   ########.fr        #
+#    Updated: 2020/07/23 18:19:46 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:=	libft.a
 #NAME 	:=	libftprintf.a
-RUNMODE	?=  release
+RUNMODE	?=	release
 # Sources files :
 IO		:=	ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c			   \
 			ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c			   \
@@ -35,7 +35,7 @@ MEM		:=	ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c	   \
 MATH	:=	ft_abs.c ft_absf.c ft_min.c ft_max.c ft_btw.c ft_clamp.c		   \
 			ft_clampf.c ft_maxf.c ft_minf.c ft_btwf.c
 LIST	:=	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c	   \
-			ft_lstnew.c ft_lstrev.c ft_lstlen.c  ft_lstaddbk.c ft_lstlast.c	   \
+			ft_lstnew.c ft_lstrev.c ft_lstlen.c ft_lstaddbk.c ft_lstlast.c	   \
 			ft_lstat.c ft_lstget.c ft_lstiteri.c ft_lstpushnew.c			   \
 			ft_lstiter_arg.c ft_lstgetnode.c ft_lstpop.c ft_lstsort.c		   \
 			ft_lstswap.c ft_lstaddendnew.c ft_lstmoveup.c ft_lstgetidx.c	   \
@@ -77,13 +77,13 @@ _\033[0m\n\033[1;36m\033[18G(_) |                     | |     | (_) |    / _| |\
 all: $(NAME)
 .PHONY: all
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) ## Built the library (default goal).
 	ar rc $@ $(OBJ) && ranlib $@
 	@printf "\n\033[1;34m$@\033[25G\033[32mBuilt $@ $(OKLOGO)"
 	@printf $(ASCIIART)
 -include $(DEP)
 
-fclean: clean
+fclean: clean ## Delete the library, object files & tests binarys.
 	$(RM) $(NAME)
 	$(RM) $(UT_OUT)
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mCleaning $(NAME) $(OKLOGO)"
@@ -92,7 +92,7 @@ fclean: clean
 %.out: %.c $(NAME)
 	$(CC) $(CFLAGS) -o $@ $< $(INC) -I includes libft.a
 
-test:  $(UT_OUT)
+test: $(UT_OUT) ## Compile tests binarys.
 	# ./ut_printf.out
 	# ./ut_atof.out
 	# ./ut_btree.out
@@ -101,7 +101,7 @@ test:  $(UT_OUT)
 	./ut_bzero.out
 .PHONY: test
 
-norme:
+norme: ## Check code base is at the 42 norme.
 	norminette srcs includes | $(GREP_ERR)
 	@printf "\033[1;34m$(NAME)\033[25G\033[31mNorminette $(OKLOGO)"
 .PHONY: norme
