@@ -6,7 +6,7 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/24 00:52:58 by nihuynh           #+#    #+#              #
-#    Updated: 2020/07/23 18:20:51 by nihuynh          ###   ########.fr        #
+#    Updated: 2020/07/23 18:27:46 by nihuynh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,13 @@
 # LIB_DEP_CLEAN is the target to clean the libs.
 
 INC				+=	$(foreach word,$(LIB_DEP),-I $(dir $(word))includes)
-LIB_LINK		:=	$(foreach word,$(LIB_DEP),-L $(dir $(word)) -l$(patsubst lib%.a,%,$(notdir $(word))))
+LIB_LINK		:=	$(foreach word,$(LIB_DEP),-L $(patsubst %/,%,$(dir $(word))) -l$(patsubst lib%.a,%,$(notdir $(word))))
 LIB_DEP_CLEAN	:=	$(foreach word,$(LIB_DEP),$(patsubst %.a,%,$(word))_clean)
 LIB_BUILT		:=	$(foreach word,$(LIB_DEP),$(patsubst %.a,%,$(word))_built)
 ifndef VERBOSE
-LIBFLAGS 	:=	-j32 RUNMODE=$(RUNMODE)
+LIBFLAGS		:=	-j32 RUNMODE=$(RUNMODE)
 else
-LIBFLAGS 	:=	-j32 RUNMODE=$(RUNMODE) VERBOSE=$(VERBOSE)
+LIBFLAGS		:=	-j32 RUNMODE=$(RUNMODE) VERBOSE=$(VERBOSE)
 endif
 # **************************************************************************** #
 # Libs links :
